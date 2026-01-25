@@ -12,9 +12,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
 
   #----- Utility Packages----
-  
+  flutter_native_splash: ^2.4.7
 
   #------Icons--------
   iconsax: ^0.0.8
@@ -59,7 +60,7 @@ flutter:
     # - assets/fonts/
     - assets/icons/brands/
     - assets/images/
-    - assets/logos/
+    - assets/logo/
 
 
 #--------Local Fonts------
