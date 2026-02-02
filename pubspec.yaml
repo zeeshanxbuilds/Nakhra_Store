@@ -15,7 +15,13 @@ dependencies:
   
 
   #----- Utility Packages----
+  http: ^1.6.0
+  intl: ^0.20.2
+  logger: ^2.6.2
+  url_launcher: ^6.3.2
   flutter_native_splash: ^2.4.7
+  smooth_page_indicator: ^2.0.1
+  lottie: ^3.3.2
 
   #------Icons--------
   iconsax: ^0.0.8
@@ -25,7 +31,7 @@ dependencies:
 
  #-----State Management-----
   get: ^4.7.3
-
+  get_storage: ^2.1.1
 
 
  #-----Product Specific
@@ -61,7 +67,7 @@ flutter:
     - assets/icons/brands/
     - assets/images/
     - assets/logo/
-    - assets/animations
+    - assets/animations/onboardingAnimation/
 
 
 #--------Local Fonts------
