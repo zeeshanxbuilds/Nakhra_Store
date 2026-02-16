@@ -10,7 +10,7 @@ class ZImages {
 
   // OnBoarding Images
 
-  static const String onBoardingImage1 = 'assets/animations/onboardingAnimation/verification.json';
-  static const String onBoardingImage2 = 'assets/animations/onboardingAnimation/shoppingCartLoader.json';
-  static const String onBoardingImage3 = 'assets/animations/onboardingAnimation/delievery.json';
+  static const String onBoardingImage1 = 'assets/animations/onboardingAnimation/chooseproduct.json';
+  static const String onBoardingImage2 = 'assets/animations/onboardingAnimation/selectpaymentmethod.json';
+  static const String onBoardingImage3 = 'assets/animations/onboardingAnimation/deliveryguy.json';
 }
