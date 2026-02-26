@@ -19,4 +19,5 @@ class ZImages {
   static const String cartIcon = "assets/icons/brands/ic_cart.svg";
   static const String categoryIcon = "assets/icons/brands/ic_category.svg";
   static const String homeIcon = "assets/icons/brands/ic_home.svg";
+  static const String outlinedEyeIcon = "assets/icons/brands/ic_passwordhide(outlinedEYE).svg";
 }

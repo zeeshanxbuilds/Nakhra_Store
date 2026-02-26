@@ -6,10 +6,13 @@ class ZTexts {
   static const String done = "Done";
   static const String zNext = "Next";
   static const String zLogin = "Login";
+  static const String zRegister = "Register";
+
   static const String email = "Email";
   static const String submit = "Submit";
-  static const String zEmail = "E-Mail";
+  static const String zYourEmail = "Your email";
   static const String zSignup = "Sign Up";
+  static const String zSignin = "Sign In";
   static const String zLogout = "Logout";
   static const String zName = "Name";
   static const String zNameHintText = "Your name";
@@ -20,7 +23,7 @@ class ZTexts {
   static const String zPhoneNo = "Phone No";
   static const String password = "Password";
   static const String zContinue = "Continue";
-  static const String zPassword = "Password";
+  static const String zYourPassword = "Your password";
   static const String zFullName = "Full Name";
   static const String zGetStarted = "Get Started";
   static const String zForgetPassword = "Forget Password?";
@@ -74,7 +77,8 @@ class ZTexts {
 
   static const String zSignUpTitle = "Get On Board!";
   static const String zSignUpSubTitle = "Create your profile to start your Journey.";
-  static const String zAlreadyHaveAnAccount = "Already have an Account";
+  static const String zAlreadyHaveAnAccount = "Already have an Account?";
+  static const String zHaveAnAccount = "Have an account?";
 
   static const String confirmEmail = "Verify your email address!";
   static const String confirmEmailSubTitle =

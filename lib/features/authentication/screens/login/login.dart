@@ -30,6 +30,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   //LoginPageHeader
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: ZSizes.spaceBtwItems),
                       Text(ZTexts.zLoginTitle, style: Theme.of(context).textTheme.headlineMedium),
