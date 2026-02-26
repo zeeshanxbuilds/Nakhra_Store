@@ -6,11 +6,14 @@ class ZTexts {
   static const String done = "Done";
   static const String zNext = "Next";
   static const String zLogin = "Login";
-  static const String email = "E-Mail";
+  static const String email = "Email";
   static const String submit = "Submit";
   static const String zEmail = "E-Mail";
-  static const String zSignup = "Signup";
+  static const String zSignup = "Sign Up";
   static const String zLogout = "Logout";
+  static const String zName = "Name";
+  static const String zNameHintText = "Your name";
+
   static const String appName = "T-Store";
   static const String ohSnap = "Oh Snap!";
   static const String zSuccess = "Success";
@@ -22,7 +25,8 @@ class ZTexts {
   static const String zGetStarted = "Get Started";
   static const String zForgetPassword = "Forget Password?";
   static const String homeAppbarSubTitle = "Coding With T";
-  static const String zSignInWithGoogle = "Sign-In with Google";
+  static const String zSignInWithGoogle = "Sign in with Google";
+  static const String zSignInWithApple = "Sign in with Apple";
 
   static const String zEmailCannotEmpty = "Email cannot be empty";
   static const String zInvalidEmailFormat = "Invalid email format";
@@ -54,13 +58,15 @@ class ZTexts {
   static const String zWelcomeTitle = "Build Awesome Apps";
   static const String zWelcomeSubTitle = "Let's put your creativity on the development highway.";
 
-  static const String zLoginTitle = "Welcome Back,";
-  static const String zLoginSubTitle = "Make it work, make it right, make it fast.";
+  static const String zLoginTitle = "Welcome Back 👋";
+  static const String zLoginSubTitle = "Sign to your account";
   static const String zRememberMe = "Remember Me?";
-  static const String zDontHaveAnAccount = "Don't have an Account";
+  static const String zDontHaveAnAccount = "Don't have an Account? ";
   static const String zEnterYour = "Enter your";
   static const String zResetPassword = "Reset Password";
+  static const String zForgotPassword = "Forgot Password?";
   static const String zOR = "OR";
+  static const String zOrWith = "Or with";
   static const String zConnectWith = "Connect With";
   static const String zFacebook = "Facebook";
   static const String zPhoneNumber = "Phone Number";
@@ -93,7 +99,8 @@ class ZTexts {
   static const String phoneNo = '745-628-5429';
   static const String selectCountry = 'Select Country';
   static const String signupScreenTitle = "signupScreenTitle";
-  static const String signupScreenSubTitle = "signupScreenSubTitle";
+  static const String signupScreenSubTitle = "Create your account";
+  static const String todayWord = "Today!";
   static const String otpVerification = "OTP Verification";
   static const String signInSubTitle = "We will send a one time SMS message.";
   static const String selectCountryCode = "Select Country Code";

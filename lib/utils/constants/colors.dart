@@ -2,6 +2,52 @@ import 'package:flutter/material.dart';
 
 class ZColors {
   // App theme colors
+
+  ZColors._();
+
+  // ===========================================================================
+  // GRAYSCALE
+  // Used for text, backgrounds, borders, and neutral elements.
+  // ===========================================================================
+  static const Color gray50 = Color(0xFFFAFAFA);
+  static const Color gray100 = Color(0xFFF5F5F5);
+  static const Color gray200 = Color(0xFFE8E8E8);
+  static const Color gray300 = Color(0xFFD6D6D6);
+  static const Color gray400 = Color(0xFFB8B8B8);
+  static const Color gray500 = Color(0xFFA6A6A6);
+  static const Color gray600 = Color(0xFF7A7A7A);
+  static const Color gray700 = Color(0xFF454545);
+  static const Color gray800 = Color(0xFF292929);
+  static const Color gray900 = Color(0xFF121212);
+
+  // ===========================================================================
+  // PRIMARY (Purple Scale)
+  // Used for main buttons, active states, and brand identity.
+  // ===========================================================================
+  static const Color primary50 = Color(0xFFFAF9FD);
+  static const Color primary100 = Color(0xFFE5DEF8);
+  static const Color primary200 = Color(0xFFCABCEF);
+  static const Color primary300 = Color(0xFFA28CE0);
+  static const Color primary400 = Color(0xFF7D64C3);
+  static const Color primary500 = Color(0xFF54408C);
+  static const Color primary600 = Color(0xFF352368);
+  static const Color primary700 = Color(0xFF251554);
+  static const Color primary800 = Color(0xFF10052F);
+  static const Color primary900 = Color(0xFF09031B);
+
+  // ===========================================================================
+  // ADDITIONAL COLORS
+  // Used for alerts (Red), success states (Green/Blue), or warnings (Orange).
+  // ===========================================================================
+
+  static const Color yellow = Color(0xFFFBAE05);
+  static const Color orange = Color(0xFFFF8C39);
+  static const Color red = Color(0xFFEF5A56);
+  static const Color blue = Color(0xFF3784FB);
+
+  // ===========================================================================
+  // ===========================================================================
+
   static const Color primary = Color(0XFF4b68ff);
   static const Color secondary = Color(0xFFFFFe24b);
   static const Color secondaryLight = Color(0xC9346DAE);
@@ -80,5 +126,4 @@ class ZColors {
   static const Color softGrey = Color(0xFFF4F4F4);
   static const Color lightGrey = Color(0xFFF9F9F9);
   static const Color white = Color(0xFFFFFFFF);
-  static const Color red = Color(0xfff43F5E);
 }

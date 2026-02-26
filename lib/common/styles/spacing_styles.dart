@@ -9,4 +9,13 @@ class ZSpacingStyle {
     left: ZSizes.defaultSpace,
     bottom: ZSizes.defaultSpace,
   );
+  static const EdgeInsetsGeometry paddingWithoutAppBarHeight = EdgeInsetsGeometry.only(
+    left: ZSizes.defaultSpace,
+    right: ZSizes.defaultSpace,
+    bottom: ZSizes.defaultSpace,
+  );
+  static const EdgeInsetsGeometry leftRightPadding = EdgeInsetsGeometry.only(
+    left: ZSizes.defaultSpace,
+    right: ZSizes.defaultSpace,
+  );
 }
