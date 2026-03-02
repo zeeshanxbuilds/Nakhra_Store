@@ -1,4 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:nakhra/features/authentication/screens/login/login.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 
 class ZClickableRichText extends StatelessWidget {
@@ -19,6 +23,10 @@ class ZClickableRichText extends StatelessWidget {
             style: Theme.of(
               context,
             ).textTheme.bodyLarge!.copyWith(color: ZColors.primary500, fontWeight: FontWeight.w600),
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                Get.to(() => LoginScreen());
+              },
           ),
         ],
       ),

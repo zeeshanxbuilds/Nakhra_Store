@@ -49,7 +49,8 @@ class ZColors {
   // ===========================================================================
 
   static const Color primary = Color(0XFF4b68ff);
-  static const Color secondary = Color(0xFFFFFe24b);
+  // ignore: use_full_hex_values_for_flutter_colors
+  static const Color secondary = Color(0xfffffe24b);
   static const Color secondaryLight = Color(0xC9346DAE);
   static const Color primaryBackground = Color(0xFFCCFBF1); // Primary Color Background
   static const Color secondaryBackground = Color(0xFFFFE4E6); // Secondary Color Background

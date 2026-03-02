@@ -3,21 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:nakhra/common/styles/spacing_styles.dart';
+import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
 import 'package:nakhra/features/authentication/screens/signup/signup.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 import 'package:nakhra/utils/constants/sizes.dart';
 import 'package:nakhra/utils/constants/text_strings.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
+  final _formkey = GlobalKey<FormState>();
+  final obsecureText = true;
 
   @override
   Widget build(BuildContext context) {
-    final _formkey = GlobalKey<FormState>();
-    var obsecureText = true;
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: SvgPicture.asset('assets/icons/brands/ic_backarrow.svg')),
+        leading: IconButton(
+          onPressed: () => Get.to(() => OnboardingScreen()),
+          icon: SvgPicture.asset('assets/icons/brands/ic_backarrow.svg'),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -124,11 +128,7 @@ class LoginScreen extends StatelessWidget {
 
                                 suffixIcon: IconButton(
                                   style: IconButton.styleFrom(),
-                                  onPressed: () {
-                                    if (obsecureText == true) {
-                                      obsecureText = false;
-                                    }
-                                  },
+                                  onPressed: () {},
                                   icon: SvgPicture.asset(
                                     "assets/icons/brands/ic_passwordhide(outlinedEYE).svg",
                                     colorFilter: ColorFilter.mode(ZColors.gray400, BlendMode.srcIn),
@@ -261,9 +261,13 @@ class LoginScreen extends StatelessWidget {
                     child: OutlinedButton.icon(
                       style: OutlinedButton.styleFrom(),
                       onPressed: () {},
-                      icon: SvgPicture.asset('assets/logo/google_logo.svg', width: 24, height: 24),
+                      icon: Padding(
+                        padding: EdgeInsetsGeometry.only(right: 1),
+                        child: SvgPicture.asset('assets/logo/google_logo.svg', width: 24, height: 24),
+                      ),
+
                       label: Text(
-                        ZTexts.zSignInWithGoogle,
+                        "  ${ZTexts.zSignInWithGoogle}",
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w500),
                       ),
                     ),
@@ -275,7 +279,10 @@ class LoginScreen extends StatelessWidget {
                     child: OutlinedButton.icon(
                       style: OutlinedButton.styleFrom(),
                       onPressed: () {},
-                      icon: SvgPicture.asset('assets/logo/apple_logo.svg', width: 24, height: 24),
+                      icon: Padding(
+                        padding: EdgeInsetsGeometry.only(right: 8),
+                        child: SvgPicture.asset('assets/logo/apple_logo.svg', width: 24, height: 24),
+                      ),
                       label: Text(
                         ZTexts.zSignInWithApple,
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w500),

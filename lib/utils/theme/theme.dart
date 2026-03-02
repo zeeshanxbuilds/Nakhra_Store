@@ -25,7 +25,7 @@ class ZAppTheme {
     appBarTheme: ZAppBarTheme.lightAppBarTheme,
   );
 
-  static ThemeData DarkTheme = ThemeData(
+  static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
     brightness: Brightness.dark,

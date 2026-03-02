@@ -158,4 +158,5 @@ class ZTexts {
 
   static const String popularProducts = "Popular Products";
   static const String homeAppbarTitle = "Good day for shopping";
+  static const String zHome = "Home";
 }

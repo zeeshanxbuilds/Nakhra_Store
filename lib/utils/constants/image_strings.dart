@@ -15,9 +15,17 @@ class ZImages {
   static const String onBoardingImage3 = 'assets/animations/onboardingAnimation/deliveryguy.json';
 
   // Iconography
-  static const String backArrow = "assets/icons/brands/ic_backarrow.svg";
-  static const String cartIcon = "assets/icons/brands/ic_cart.svg";
-  static const String categoryIcon = "assets/icons/brands/ic_category.svg";
-  static const String homeIcon = "assets/icons/brands/ic_home.svg";
-  static const String outlinedEyeIcon = "assets/icons/brands/ic_passwordhide(outlinedEYE).svg";
+  static const String backArrow = "assets/icons/ic_backarrow.svg";
+  static const String cartIcon = "assets/icons/ic_cart.svg";
+  static const String categoryIcon = "assets/icons/ic_category.svg";
+  static const String homeIcon = "assets/icons/ic_home.svg";
+  static const String outlinedEyeIcon = "assets/icons/ic_passwordhide(outlinedEYE).svg";
+  static const String profileIcon = "assets/icons/ic_profile.svg";
+  static const String searchIcon = "assets/icons/search_icon.svg";
+  static const String bellIcon = "assets/icons/bell_outline_icon.svg";
+
+  static const String homeIconGrey = "assets/icons/homeicon_grey.svg";
+  static const String categoryIconGrey = "assets/icons/categoryicon_grey.svg";
+  static const String cartIconGrey = "assets/icons/carticon_grey.svg";
+  static const String profileIconGrey = "assets/icons/profileicon_grey.svg";
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
+import 'package:nakhra/home_menu_getx.dart';
 import 'package:nakhra/utils/theme/theme.dart';
 
 void main() {
@@ -14,11 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      defaultTransition: Transition.cupertino,
+      transitionDuration: const Duration(milliseconds: 400),
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme: ZAppTheme.lightTheme,
-      darkTheme: ZAppTheme.DarkTheme,
-      home: OnboardingScreen(),
+      darkTheme: ZAppTheme.darkTheme,
+      home: ZBottomNavigationBar(),
     );
   }
 }

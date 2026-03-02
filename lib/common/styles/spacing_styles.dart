@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nakhra/utils/constants/sizes.dart';
-import 'package:nakhra/utils/device/device_utility.dart';
 
 class ZSpacingStyle {
   static const EdgeInsetsGeometry paddingWithAppBarHeight = EdgeInsets.only(

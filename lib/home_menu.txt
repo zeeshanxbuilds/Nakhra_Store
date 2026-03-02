@@ -1,0 +1,80 @@
+// import 'package:flutter/material.dart';
+// import 'package:flutter_svg/svg.dart';
+// import 'package:nakhra/cart_screen.dart';
+// import 'package:nakhra/category_screen.dart';
+// import 'package:nakhra/home_screen.dart';
+// import 'package:nakhra/profile_screen.dart';
+// import 'package:nakhra/utils/constants/colors.dart';
+// import 'package:nakhra/utils/constants/image_strings.dart';
+
+// class AppBottomNavigationMenu extends StatelessWidget {
+//   final int currentIndex;
+//   final ValueChanged<int> onTabSelected;
+//   const AppBottomNavigationMenu({super.key, required this.currentIndex, required this.onTabSelected});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return NavigationBar(
+//       selectedIndex: currentIndex,
+//       onDestinationSelected: onTabSelected,
+//       destinations: [
+//         NavigationDestination(
+//           icon: SvgPicture.asset(ZImages.homeIcon),
+//           selectedIcon: SvgPicture.asset(
+//             ZImages.homeIcon,
+//             colorFilter: ColorFilter.mode(ZColors.primary500, BlendMode.srcIn),
+//           ),
+//           label: 'Home',
+//         ),
+//         NavigationDestination(
+//           icon: SvgPicture.asset(ZImages.categoryIcon),
+//           selectedIcon: SvgPicture.asset(
+//             ZImages.categoryIcon,
+//             colorFilter: ColorFilter.mode(ZColors.primary500, BlendMode.srcIn),
+//           ),
+//           label: 'Category',
+//         ),
+//         NavigationDestination(
+//           icon: SvgPicture.asset(ZImages.cartIcon),
+//           selectedIcon: SvgPicture.asset(
+//             ZImages.cartIcon,
+//             colorFilter: ColorFilter.mode(ZColors.primary500, BlendMode.srcIn),
+//           ),
+//           label: 'Cart',
+//         ),
+//         NavigationDestination(
+//           icon: SvgPicture.asset(ZImages.profileIcon),
+//           selectedIcon: SvgPicture.asset(
+//             ZImages.profileIcon,
+//             colorFilter: ColorFilter.mode(ZColors.primary500, BlendMode.srcIn),
+//           ),
+//           label: 'Profile',
+//         ),
+//       ],
+//     );
+//   }
+// }
+
+// class MainLayoutScreen extends StatefulWidget {
+//   const MainLayoutScreen({super.key});
+//   @override
+//   State<MainLayoutScreen> createState() => _MainLayoutScreenState();
+// }
+
+// class _MainLayoutScreenState extends State<MainLayoutScreen> {
+//   int _selectedIndex = 0;
+//   final List<Widget> _screens = const [HomeScreen(), CategoryScreen(), CartScreen(), ProfileScreen()];
+//   void _onItemTapped(int index) {
+//     setState(() {
+//       _selectedIndex = index;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: IndexedStack(index: _selectedIndex, children: _screens),
+//       bottomNavigationBar: AppBottomNavigationMenu(currentIndex: _selectedIndex, onTabSelected: _onItemTapped),
+//     );
+//   }
+// }
