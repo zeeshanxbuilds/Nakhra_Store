@@ -19,7 +19,7 @@ class ZImages {
   static const String cartIcon = "assets/icons/ic_cart.svg";
   static const String categoryIcon = "assets/icons/ic_category.svg";
   static const String homeIcon = "assets/icons/ic_home.svg";
-  static const String outlinedEyeIcon = "assets/icons/ic_passwordhide(outlinedEYE).svg";
+  static const String outlinedEyeIcon = "assets/icons/passwordhideicon.svg";
   static const String profileIcon = "assets/icons/ic_profile.svg";
   static const String searchIcon = "assets/icons/search_icon.svg";
   static const String bellIcon = "assets/icons/bell_outline_icon.svg";
@@ -28,4 +28,18 @@ class ZImages {
   static const String categoryIconGrey = "assets/icons/categoryicon_grey.svg";
   static const String cartIconGrey = "assets/icons/carticon_grey.svg";
   static const String profileIconGrey = "assets/icons/profileicon_grey.svg";
+
+  /// Images
+  // static const String promotionSliderImage0 = "assets/images/promotion_slide_image1.svg";
+  // static const String promotionSliderImage1 = "assets/images/promotion_slide_image1.png";
+  // static const String promotionSliderImage2 = "assets/images/promotion_slide_image2.png";
+  // static const String promotionSliderImage3 = "assets/images/promotion_slide_image3.png";
+
+  static const String promotionSliderImage1 = "assets/images/promotion_image1.png";
+  static const String promotionSliderImage2 = "assets/images/promotion_image2.png";
+  static const String promotionSliderImage3 = "assets/images/promotion_image3.png";
+
+  static const String testing1 = "assets/images/download.png";
+  static const String testing2 = "assets/images/download2.png";
+  static const String testing3 = "assets/images/download3.png";
 }

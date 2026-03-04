@@ -1,19 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:nakhra/features/shop/screens/cart/cart_screen.dart';
-import 'package:nakhra/features/shop/screens/category/category_screen.dart';
-import 'package:nakhra/features/shop/screens/home/home_screen.dart';
-import 'package:nakhra/features/personalization/screens/profile/profile_screen.dart';
+import 'package:nakhra/home_menu_getx_controller.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 import 'package:nakhra/utils/constants/image_strings.dart';
-
-/// Controller
-class ZBottomNavigationController extends GetxController {
-  final selectedIndex = 0.obs;
-
-  final List<Widget> screens = const [HomeScreen(), CategoryScreen(), CartScreen(), ProfileScreen()];
-}
 
 /// UI
 class ZBottomNavigationBar extends StatelessWidget {
@@ -25,7 +15,6 @@ class ZBottomNavigationBar extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
-          height: 80,
           elevation: 0,
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) => controller.selectedIndex.value = index,

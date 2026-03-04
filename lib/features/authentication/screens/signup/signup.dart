@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -7,6 +8,7 @@ import 'package:nakhra/common/widgets/login_signup/clickable_rich_text.dart';
 import 'package:nakhra/common/widgets/login_signup/z_elevated_button.dart';
 import 'package:nakhra/common/widgets/login_signup/z_text_field.dart';
 import 'package:nakhra/features/authentication/screens/login/login.dart';
+import 'package:nakhra/features/authentication/screens/terms_and_policy/terms_and_datapolicy_screen.dart';
 import 'package:nakhra/home_menu_getx.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 import 'package:nakhra/utils/constants/image_strings.dart';
@@ -112,14 +114,25 @@ class SignupScreen extends StatelessWidget {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: EdgeInsets.only(bottom: ZSizes.md),
+                padding: EdgeInsets.only(bottom: ZSizes.xl),
                 child: Text.rich(
                   TextSpan(
                     children: [
-                      TextSpan(text: 'By Clicking Register, you agree to our\n'),
                       TextSpan(
-                        text: 'Terms and Data Policy',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: ZColors.primary500),
+                        text: "${ZTexts.zByClickingRegister}\n",
+                        style: Theme.of(context).textTheme.labelMedium!.copyWith(fontSize: 12.5),
+                      ),
+                      TextSpan(
+                        text: ZTexts.zTermAndDataPolicy,
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: ZColors.primary500,
+                          fontSize: 12.5,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Get.to(() => TermsAndDatapolicyScreen());
+                          },
                       ),
                     ],
                   ),

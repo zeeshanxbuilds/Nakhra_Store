@@ -19,6 +19,7 @@ class ZTexts {
 
   static const String appName = "T-Store";
   static const String ohSnap = "Oh Snap!";
+  static const String orderNow = "Order Now";
   static const String zSuccess = "Success";
   static const String zPhoneNo = "Phone No";
   static const String password = "Password";
@@ -109,6 +110,7 @@ class ZTexts {
   static const String signInSubTitle = "We will send a one time SMS message.";
   static const String selectCountryCode = "Select Country Code";
   static const String sendingOTP = "Sending OTP...";
+  static const String specialOffer = "Special Offer";
   static const String phoneVerifiedTitle = "Phone Verified";
   static const String phoneVerifiedMessage = "Your phone number has been verified.";
   static const String noInternet = "No Internet";
@@ -159,4 +161,6 @@ class ZTexts {
   static const String popularProducts = "Popular Products";
   static const String homeAppbarTitle = "Good day for shopping";
   static const String zHome = "Home";
+  static const String zByClickingRegister = "By Clicking Register, you agree to our";
+  static const String zTermAndDataPolicy = "Terms and Data Policy";
 }

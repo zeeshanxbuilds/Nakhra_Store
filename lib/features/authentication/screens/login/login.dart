@@ -6,6 +6,7 @@ import 'package:nakhra/common/styles/spacing_styles.dart';
 import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
 import 'package:nakhra/features/authentication/screens/signup/signup.dart';
 import 'package:nakhra/utils/constants/colors.dart';
+import 'package:nakhra/utils/constants/image_strings.dart';
 import 'package:nakhra/utils/constants/sizes.dart';
 import 'package:nakhra/utils/constants/text_strings.dart';
 
@@ -20,7 +21,7 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Get.to(() => OnboardingScreen()),
-          icon: SvgPicture.asset('assets/icons/brands/ic_backarrow.svg'),
+          icon: SvgPicture.asset(ZImages.backArrow),
         ),
       ),
       body: SingleChildScrollView(
@@ -130,7 +131,7 @@ class LoginScreen extends StatelessWidget {
                                   style: IconButton.styleFrom(),
                                   onPressed: () {},
                                   icon: SvgPicture.asset(
-                                    "assets/icons/brands/ic_passwordhide(outlinedEYE).svg",
+                                    ZImages.outlinedEyeIcon,
                                     colorFilter: ColorFilter.mode(ZColors.gray400, BlendMode.srcIn),
                                   ),
                                 ),

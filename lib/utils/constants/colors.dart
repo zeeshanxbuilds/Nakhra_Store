@@ -26,6 +26,7 @@ class ZColors {
   // ===========================================================================
   static const Color primary50 = Color(0xFFFAF9FD);
   static const Color primary100 = Color(0xFFE5DEF8);
+  static const Color primary100_50opacity = Color.fromARGB(133, 229, 222, 248);
   static const Color primary200 = Color(0xFFCABCEF);
   static const Color primary300 = Color(0xFFA28CE0);
   static const Color primary400 = Color(0xFF7D64C3);
