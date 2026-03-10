@@ -39,7 +39,11 @@ class ZImages {
   static const String promotionSliderImage2 = "assets/images/promotion_image2.png";
   static const String promotionSliderImage3 = "assets/images/promotion_image3.png";
 
+  /// prmotion slider Images
   static const String testing1 = "assets/images/download.png";
   static const String testing2 = "assets/images/download2.png";
   static const String testing3 = "assets/images/download3.png";
+
+  /// Top of Week Book Images
+  static const String tOWSectionImage1 = "assets/images/topofweekimage1.png";
 }

@@ -103,9 +103,11 @@ class ZTexts {
 
   static const String phoneNo = '745-628-5429';
   static const String selectCountry = 'Select Country';
+  static const String seeAll = 'See all';
   static const String signupScreenTitle = "signupScreenTitle";
   static const String signupScreenSubTitle = "Create your account";
   static const String todayWord = "Today!";
+  static const String topOfWeek = "Top of Week";
   static const String otpVerification = "OTP Verification";
   static const String signInSubTitle = "We will send a one time SMS message.";
   static const String selectCountryCode = "Select Country Code";
