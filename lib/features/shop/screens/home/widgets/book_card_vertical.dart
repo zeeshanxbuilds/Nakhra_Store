@@ -17,19 +17,25 @@ class ZBookCardVertical extends StatelessWidget {
         children: [
           Container(
             height: 150,
-            width: 127,
+            width: double.infinity,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
             clipBehavior: Clip.hardEdge,
             child: Image.asset(imagePath, fit: BoxFit.cover),
           ),
-          const SizedBox(height: ZSizes.defaultSpace),
+          const SizedBox(height: ZSizes.sm),
           Text(
             bookTitle,
             style: Theme.of(context).textTheme.titleMedium,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-          const SizedBox(height: ZSizes.defaultSpace),
-          Text(bookPrice, style: Theme.of(context).textTheme.labelLarge!.copyWith(color: ZColors.primary500)),
+          const SizedBox(height: ZSizes.xs),
+          Text(
+            bookPrice,
+            style: Theme.of(
+              context,
+            ).textTheme.labelLarge!.copyWith(color: ZColors.primary400, fontWeight: FontWeight.w600),
+          ),
         ],
       ),
     );

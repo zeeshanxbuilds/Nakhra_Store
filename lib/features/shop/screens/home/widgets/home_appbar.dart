@@ -4,7 +4,8 @@ import 'package:nakhra/utils/constants/image_strings.dart';
 import 'package:nakhra/utils/constants/text_strings.dart';
 
 class HomeAppbar extends StatelessWidget {
-  const HomeAppbar({super.key});
+  final title;
+  const HomeAppbar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class HomeAppbar extends StatelessWidget {
       children: [
         IconButton(onPressed: () {}, icon: SvgPicture.asset(ZImages.searchIcon)),
         Text(
-          ZTexts.zHome,
+          title,
           style: Theme.of(context).textTheme.headlineMedium!.copyWith(fontSize: 23, fontWeight: FontWeight.w600),
         ),
         IconButton(onPressed: () {}, icon: SvgPicture.asset(ZImages.bellIcon)),

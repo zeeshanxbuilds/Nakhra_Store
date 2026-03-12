@@ -161,7 +161,8 @@ class ZTexts {
   static const String dateOfBirthError = "You must be at least 18 years old.";
 
   static const String popularProducts = "Popular Products";
-  static const String homeAppbarTitle = "Good day for shopping";
+  static const String homeAppbarTitle = "Home";
+  static const String categoryAppBarTitle = "Category";
   static const String zHome = "Home";
   static const String zByClickingRegister = "By Clicking Register, you agree to our";
   static const String zTermAndDataPolicy = "Terms and Data Policy";

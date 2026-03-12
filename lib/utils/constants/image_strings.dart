@@ -46,4 +46,15 @@ class ZImages {
 
   /// Top of Week Book Images
   static const String tOWSectionImage1 = "assets/images/topofweekimage1.png";
+
+  /// Best Vendors section Images
+  static const String vendorlogo1 = "assets/images/vendor_logo1.svg";
+  static const String vendorlogo2 = "assets/images/vendor_logo2.svg";
+  static const String vendorlogo3 = "assets/images/vendor_logo3.svg";
+  static const String vendorlogo4 = "assets/images/vendor_logo4.svg";
+
+  ///
+  static const String authorImage1 = "assets/images/author_image1.png";
+  static const String authorImage2 = "assets/images/author_image2.png";
+  static const String authorImage3 = "assets/images/author_image3.png";
 }
