@@ -29,6 +29,9 @@ class ZImages {
   static const String cartIconGrey = "assets/icons/carticon_grey.svg";
   static const String profileIconGrey = "assets/icons/profileicon_grey.svg";
 
+  static const String bigBellIcon = "assets/icons/bell_icon.svg";
+  static const String bigCartIcon = "assets/icons/cart_icon.svg";
+
   /// Images
   // static const String promotionSliderImage0 = "assets/images/promotion_slide_image1.svg";
   // static const String promotionSliderImage1 = "assets/images/promotion_slide_image1.png";
@@ -57,4 +60,21 @@ class ZImages {
   static const String authorImage1 = "assets/images/author_image1.png";
   static const String authorImage2 = "assets/images/author_image2.png";
   static const String authorImage3 = "assets/images/author_image3.png";
+
+  /// bookcover Images
+  static const String bookCover1 = "assets/images/bookcover1.jpg";
+  static const String bookCover2 = "assets/images/bookcover2.jpg";
+  static const String bookCover3 = "assets/images/bookcover3.jpg";
+  static const String bookCover4 = "assets/images/bookcover4.jpg";
+  static const String bookCover5 = "assets/images/bookcover5.jpg";
+  static const String bookCover6 = "assets/images/bookcover6.jpg";
+
+  /// bookcover Images
+  static const String richDadPoorDad = "assets/images/rich_dad_poor_dad.jpg";
+  static const String subtleArtOfNotGivingAFuck = "assets/images/subtle_art_of_not_giving_a_fuck.jpg";
+  static const String lawsOfPower = "assets/images/48_laws_of_power.jpg";
+  static const String doItToday = "assets/images/do_it_today.jpg";
+  static const String doEpicShit = "assets/images/do_epic_shit.jpg";
+  static const String ikigai = "assets/images/ikigai.jpg";
+  static const String surroundedByIdiots = "assets/images/surrounded_by_idiots.jpg";
 }

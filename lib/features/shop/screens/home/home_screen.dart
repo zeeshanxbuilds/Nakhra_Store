@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
           // padding: ZSpacingStyle.paddingWithoutAppBarHeight,
           child: Column(
             children: [
-              const HomeAppbar(title: ZTexts.homeAppbarTitle),
+              HomeAppbar(title: ZTexts.homeAppbarTitle, leading: () {}, action: () {}),
               Expanded(
                 child: SingleChildScrollView(
                   physics: CustomBouncingScrollPhysics(),

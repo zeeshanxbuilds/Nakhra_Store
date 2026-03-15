@@ -16,6 +16,7 @@ class ZBottomNavigationBar extends StatelessWidget {
       bottomNavigationBar: Obx(
         () => NavigationBar(
           elevation: 0,
+
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) => controller.selectedIndex.value = index,
           destinations: [

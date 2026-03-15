@@ -5,7 +5,9 @@ import 'package:nakhra/utils/constants/text_strings.dart';
 
 class HomeAppbar extends StatelessWidget {
   final title;
-  const HomeAppbar({super.key, required this.title});
+  final leading;
+  final action;
+  const HomeAppbar({super.key, required this.title, required this.leading, required this.action});
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +15,12 @@ class HomeAppbar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       // crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        IconButton(onPressed: () {}, icon: SvgPicture.asset(ZImages.searchIcon)),
+        IconButton(onPressed: leading, icon: leading == null ? SizedBox() : SvgPicture.asset(ZImages.searchIcon)),
         Text(
           title,
           style: Theme.of(context).textTheme.headlineMedium!.copyWith(fontSize: 23, fontWeight: FontWeight.w600),
         ),
-        IconButton(onPressed: () {}, icon: SvgPicture.asset(ZImages.bellIcon)),
+        IconButton(onPressed: action, icon: action == null ? SizedBox() : SvgPicture.asset(ZImages.bellIcon)),
       ],
     );
   }

@@ -116,6 +116,7 @@ class ZTexts {
   static const String phoneVerifiedTitle = "Phone Verified";
   static const String phoneVerifiedMessage = "Your phone number has been verified.";
   static const String noInternet = "No Internet";
+  static const String noBooksFound = "No books found in this category.";
   static const String checkInternetConnection = "Please check your internet connection and try again.";
   static const String unableToSendOTP = "Unable to send OTP";
   static const String otpSendTitle = "OTP Send";
@@ -126,6 +127,7 @@ class ZTexts {
   static const String inText = "in";
   static const String resendOTP = "Re-Send OTP";
   static const String thenLets = "Then let’s ";
+  static const String thereIsNoProduct = "    There is no Products";
 
   static const String zEmailVerificationTitle = "Verify your email address";
   static const String zEmailVerificationSubTitle =
