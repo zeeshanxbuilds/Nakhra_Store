@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:nakhra/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nakhra/common/widgets/list_tiles/profile_menu_tile.dart';
+import 'package:nakhra/features/personalization/screens/profile/widgets/user_profile_header.dart';
+import 'package:nakhra/utils/constants/colors.dart';
+import 'package:nakhra/utils/constants/image_strings.dart';
+import 'package:nakhra/utils/constants/text_strings.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -7,11 +12,62 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(ZTexts.zProfile, style: Theme.of(context).textTheme.headlineMedium!.copyWith()),
+      ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 2.0, left: 5, right: 5),
-          child: SingleChildScrollView(
-            child: Column(children: [HomeAppbar(title: "Profile", leading: null, action: null)]),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 24),
+              Divider(thickness: 0.5, color: ZColors.gray400),
+              ZUserProfileHeader(
+                userProfileName: 'John Doe',
+                userProfileemail: 'johndoe@gmail.com',
+                userProfileImage: ZImages.profileImage,
+              ),
+              Divider(thickness: 0.5, color: ZColors.gray400),
+              SizedBox(height: 16),
+              ZProfileMenuTile(
+                leading: SvgPicture.asset(ZImages.myAccountIcon),
+                title: "My Account",
+                trailing: SvgPicture.asset(
+                  ZImages.cheveronTrailingIcon,
+                  height: 24,
+                  width: 24,
+                  colorFilter: ColorFilter.mode(ZColors.gray500, BlendMode.srcIn),
+                ),
+                ontap: () {},
+              ),
+              SizedBox(height: 12),
+              ZProfileMenuTile(leading: SvgPicture.asset(ZImages.addressIcon), title: "Address", ontap: () {}),
+              // ZProfileMenuTile(title: "My Account"),
+              SizedBox(height: 12),
+              ZProfileMenuTile(
+                leading: SvgPicture.asset(ZImages.offersAndPromosIcon),
+                title: "Offers & Promos",
+                ontap: () {},
+              ),
+              SizedBox(height: 12),
+              ZProfileMenuTile(
+                leading: SvgPicture.asset(ZImages.yourFavoritesIcon),
+                title: "Your Favorites",
+                ontap: () {},
+              ),
+              SizedBox(height: 12),
+              ZProfileMenuTile(
+                leading: SvgPicture.asset(ZImages.orderHistoryIcon),
+                title: "Order History",
+                ontap: () {},
+              ),
+              SizedBox(height: 12),
+              ZProfileMenuTile(
+                leading: SvgPicture.asset(ZImages.helpCenterIcon),
+                title: "Help Center",
+                ontap: () {},
+              ),
+            ],
           ),
         ),
       ),

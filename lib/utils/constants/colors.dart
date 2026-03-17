@@ -44,6 +44,8 @@ class ZColors {
   static const Color yellow = Color(0xFFFBAE05);
   static const Color orange = Color(0xFFFF8C39);
   static const Color red = Color(0xFFEF5A56);
+  static const Color darkred = Color(0xFFED221B);
+  static const Color XLdarkred = Color(0xFFFF0800);
   static const Color blue = Color(0xFF3784FB);
 
   // ===========================================================================

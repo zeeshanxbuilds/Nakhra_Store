@@ -32,6 +32,14 @@ class ZImages {
   static const String bigBellIcon = "assets/icons/bell_icon.svg";
   static const String bigCartIcon = "assets/icons/cart_icon.svg";
 
+  static const String myAccountIcon = "assets/icons/myaccount.svg";
+  static const String addressIcon = "assets/icons/address.svg";
+  static const String offersAndPromosIcon = "assets/icons/offers_promos.svg";
+  static const String yourFavoritesIcon = "assets/icons/your_favorites.svg";
+  static const String orderHistoryIcon = "assets/icons/order_history.svg";
+  static const String helpCenterIcon = "assets/icons/help_center.svg";
+  static const String cheveronTrailingIcon = "assets/icons/cheverontrailingIcon.svg";
+
   /// Images
   // static const String promotionSliderImage0 = "assets/images/promotion_slide_image1.svg";
   // static const String promotionSliderImage1 = "assets/images/promotion_slide_image1.png";
@@ -77,4 +85,7 @@ class ZImages {
   static const String doEpicShit = "assets/images/do_epic_shit.jpg";
   static const String ikigai = "assets/images/ikigai.jpg";
   static const String surroundedByIdiots = "assets/images/surrounded_by_idiots.jpg";
+
+  /// dummy data ( maybe delete later )
+  static const String profileImage = "assets/images/dummyprofileimage.png";
 }

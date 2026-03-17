@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "476784795881",
+    "project_id": "nakhra-store",
+    "storage_bucket": "nakhra-store.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476784795881:android:ba9cdfaf62defd57ba5078",
+        "android_client_info": {
+          "package_name": "com.orientasystems.nakhra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEANC0iVrpSr_5OGFhe00X-hxdPkiE4gY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
