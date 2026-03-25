@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:nakhra/common/styles/spacing_styles.dart';
+import 'package:nakhra/features/authentication/controllers/login/login_controller.dart';
 import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
 import 'package:nakhra/features/authentication/screens/signup/signup.dart';
 import 'package:nakhra/utils/constants/colors.dart';
@@ -17,6 +18,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -49,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(height: ZSizes.customDefaultSpace),
                       //LoginPageForm
                       Form(
-                        key: _formkey,
+                        key: controller.loginFormKey,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -61,6 +63,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                             const SizedBox(height: ZSizes.xs),
                             TextFormField(
+                              controller: controller.email,
                               decoration: InputDecoration(
                                 filled: true,
                                 fillColor: ZColors.grey10,
@@ -103,6 +106,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                             const SizedBox(height: ZSizes.xs),
                             TextFormField(
+                              controller: controller.password,
                               obscureText: obsecureText,
                               decoration: InputDecoration(
                                 filled: true,
@@ -138,25 +142,25 @@ class LoginScreen extends StatelessWidget {
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                               ),
 
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Password is Required';
-                                }
-                                if (value.trim().length < 8) {
-                                  return 'Password must contain:\n8+ characters\nOne letter\nOne symbol\nOne number';
-                                }
-                                if (!value.contains(RegExp(r'[ABCDEFGHIJKLMNOPQRSTUVWXYZ]'))) {
-                                  return 'Password must contain an alphabet';
-                                }
-                                if (!value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
-                                  return 'Special Character is Required';
-                                }
-                                if (!value.contains(RegExp(r'[0-9]'))) {
-                                  return 'Password must contain a number';
-                                }
+                              // validator: (value) {
+                              //   if (value == null || value.isEmpty) {
+                              //     return 'Password is Required';
+                              //   }
+                              //   if (value.trim().length < 8) {
+                              //     return 'Password must contain:\n8+ characters\nOne letter\nOne symbol\nOne number';
+                              //   }
+                              //   if (!value.contains(RegExp(r'[ABCDEFGHIJKLMNOPQRSTUVWXYZ]'))) {
+                              //     return 'Password must contain an alphabet';
+                              //   }
+                              //   if (!value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+                              //     return 'Special Character is Required';
+                              //   }
+                              //   if (!value.contains(RegExp(r'[0-9]'))) {
+                              //     return 'Password must contain a number';
+                              //   }
 
-                                return null;
-                              },
+                              //   return null;
+                              // },
                             ),
                             const SizedBox(height: ZSizes.sm),
                             TextButton(
@@ -189,11 +193,12 @@ class LoginScreen extends StatelessWidget {
                                   side: BorderSide.none,
                                 ),
                                 onPressed: () {
-                                  if (_formkey.currentState!.validate()) {
-                                    ScaffoldMessenger.of(
-                                      context,
-                                    ).showSnackBar(SnackBar(content: Text('Successfull')));
-                                  }
+                                  // if (controller.loginFormKey.currentState!.validate()) {
+                                  //   ScaffoldMessenger.of(
+                                  //     context,
+                                  //   ).showSnackBar(SnackBar(content: Text('Successfull')));
+                                  // }
+                                  controller.emailAndPasswordSignIn();
                                 },
                                 child: const Text(ZTexts.zLogin),
                               ),

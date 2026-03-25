@@ -25,7 +25,7 @@ class ZClickableRichText extends StatelessWidget {
             ).textTheme.bodyLarge!.copyWith(color: ZColors.primary500, fontWeight: FontWeight.w600),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                Get.to(() => LoginScreen());
+                Get.offAll(() => LoginScreen());
               },
           ),
         ],

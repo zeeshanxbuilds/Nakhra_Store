@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:nakhra/data/repositories/authentication/authentication_repository.dart';
+import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
 // import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
 import 'package:nakhra/home_menu_getx.dart';
 import 'package:nakhra/utils/theme/theme.dart';
@@ -12,22 +14,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      systemStatusBarContrastEnforced: false,
-      statusBarIconBrightness: Brightness.dark,
-      //bottom bar
-      systemNavigationBarColor: Colors.transparent,
-      systemNavigationBarContrastEnforced: false,
-      systemNavigationBarDividerColor: Colors.transparent,
-      systemNavigationBarIconBrightness: Brightness.dark,
-    ),
-  );
-
-  // ...
-
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  Get.put(AuthenticationRepository());
 
   runApp(const MyApp());
 }
@@ -37,14 +26,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      defaultTransition: Transition.cupertino,
-      transitionDuration: const Duration(milliseconds: 400),
-      debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
-      theme: ZAppTheme.lightTheme,
-      darkTheme: ZAppTheme.darkTheme,
-      home: ZBottomNavigationBar(),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        systemStatusBarContrastEnforced: false,
+        statusBarIconBrightness: Brightness.dark,
+        //bottom bar
+        systemNavigationBarColor: Colors.transparent,
+        systemNavigationBarContrastEnforced: false,
+        systemNavigationBarDividerColor: Colors.transparent,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
+      child: GetMaterialApp(
+        defaultTransition: Transition.cupertino,
+        transitionDuration: const Duration(milliseconds: 400),
+        debugShowCheckedModeBanner: false,
+        themeMode: ThemeMode.light,
+        theme: ZAppTheme.lightTheme,
+        darkTheme: ZAppTheme.darkTheme,
+        home: OnboardingScreen(),
+      ),
     );
   }
 }

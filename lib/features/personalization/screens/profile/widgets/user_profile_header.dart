@@ -6,11 +6,13 @@ class ZUserProfileHeader extends StatelessWidget {
   final String userProfileImage;
   final String userProfileName;
   final String userProfileemail;
+  final VoidCallback trailingOnTap;
   const ZUserProfileHeader({
     super.key,
     required this.userProfileImage,
     required this.userProfileName,
     required this.userProfileemail,
+    required this.trailingOnTap,
   });
 
   @override
@@ -29,7 +31,7 @@ class ZUserProfileHeader extends StatelessWidget {
       // trailing: Text("Logout"),
       trailing: TextButton(
         style: TextButton.styleFrom(padding: EdgeInsets.all(0), overlayColor: Colors.transparent),
-        onPressed: () {},
+        onPressed: trailingOnTap,
         child: Text(
           ZTexts.zLogout,
           style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: ZColors.red, fontWeight: FontWeight.w700),

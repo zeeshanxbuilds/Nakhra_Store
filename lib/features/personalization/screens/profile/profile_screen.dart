@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:nakhra/common/widgets/list_tiles/profile_menu_tile.dart';
+import 'package:nakhra/data/repositories/authentication/authentication_repository.dart';
+import 'package:nakhra/features/authentication/screens/login/login.dart';
 import 'package:nakhra/features/personalization/screens/profile/widgets/user_profile_header.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 import 'package:nakhra/utils/constants/image_strings.dart';
 import 'package:nakhra/utils/constants/text_strings.dart';
+import 'package:nakhra/utils/helpers/nakhra_snakbars.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -26,6 +31,15 @@ class ProfileScreen extends StatelessWidget {
                 userProfileName: 'John Doe',
                 userProfileemail: 'johndoe@gmail.com',
                 userProfileImage: ZImages.profileImage,
+                trailingOnTap: () async {
+                  try {
+                    await AuthenticationRepository.instance.logout();
+
+                    Get.offAll(LoginScreen());
+                  } catch (e) {
+                    NakhraSnakbars.errorSnackBar(title: 'Error', message: e.toString());
+                  }
+                },
               ),
               Divider(thickness: 0.5, color: ZColors.gray400),
               SizedBox(height: 16),
