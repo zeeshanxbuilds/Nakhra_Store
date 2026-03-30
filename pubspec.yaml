@@ -35,7 +35,7 @@ dependencies:
   get_storage: ^2.1.1
   firebase_core: ^4.5.0
   firebase_auth: ^6.3.0
-
+  cloud_firestore: ^6.2.0
 
  #-----Product Specific
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:nakhra/data/repositories/authentication/authentication_repository.dart';
+import 'package:nakhra/data/repositories/user/user_repository.dart';
 import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
 // import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
 import 'package:nakhra/home_menu_getx.dart';
@@ -17,7 +18,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   Get.put(AuthenticationRepository());
-
+  Get.put(UserRepository());
   runApp(const MyApp());
 }
 

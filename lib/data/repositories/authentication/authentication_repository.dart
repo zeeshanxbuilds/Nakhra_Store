@@ -2,6 +2,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:nakhra/utils/exceptions/firebase_auth_exceptions.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -12,18 +13,18 @@ class AuthenticationRepository extends GetxController {
     try {
       return await _auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      throw e.message ?? "Something went wrong. Please try again.";
+      throw ZFirebaseAuthException(e.code).message;
     } catch (e) {
-      throw 'Invalid Email or Password';
+      throw 'Something went wrong. Please try again.';
     }
   }
 
-  /// This is the function to register with email and password or create a new user with email and password
+  /// This is the function to register with email and password or create a new user with email and password and returns usercredential
   Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
     try {
       return await _auth.createUserWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      throw e.message ?? 'Something went wrong. Please try again.';
+      throw ZFirebaseAuthException(e.code).message;
     } catch (e) {
       throw 'Something went wrong. Please try again';
     }

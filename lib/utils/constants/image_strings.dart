@@ -20,6 +20,7 @@ class ZImages {
   static const String categoryIcon = "assets/icons/ic_category.svg";
   static const String homeIcon = "assets/icons/ic_home.svg";
   static const String outlinedEyeIcon = "assets/icons/passwordhideicon.svg";
+  static const String nonOutlinedEyeIcon = "assets/icons/ic_passwordshowicon.svg";
   static const String profileIcon = "assets/icons/ic_profile.svg";
   static const String searchIcon = "assets/icons/search_icon.svg";
   static const String bellIcon = "assets/icons/bell_outline_icon.svg";

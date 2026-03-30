@@ -8,7 +8,7 @@ class ZTextFormField extends StatelessWidget {
     required this.label,
     required this.hintText,
     this.controller,
-    this.isPassword = false,
+    this.obscureText = false,
     this.keyboardType = TextInputType.text,
     this.validator,
     this.suffixIcon,
@@ -16,7 +16,7 @@ class ZTextFormField extends StatelessWidget {
   final String label;
   final String hintText;
   final TextEditingController? controller;
-  final bool isPassword;
+  final bool obscureText;
   final TextInputType keyboardType;
   final String? Function(String?)? validator;
   final Widget? suffixIcon;
@@ -29,19 +29,33 @@ class ZTextFormField extends StatelessWidget {
         const SizedBox(height: ZSizes.xs),
         TextFormField(
           controller: controller,
-          obscureText: isPassword,
+          obscureText: obscureText,
           keyboardType: keyboardType,
           validator: validator,
 
           decoration: InputDecoration(
             suffixIcon: suffixIcon,
+
             filled: true,
+
             fillColor: ZColors.grey10,
             hintText: hintText,
             hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(color: ZColors.borderDark),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide.none,
               borderRadius: BorderRadius.circular(14),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: ZColors.primary500),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: ZColors.error),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: ZColors.orange),
+              borderRadius: BorderRadius.circular(20),
             ),
           ),
         ),
