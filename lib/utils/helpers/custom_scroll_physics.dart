@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class CustomBouncingScrollPhysics extends BouncingScrollPhysics {
   const CustomBouncingScrollPhysics({super.parent});
 
-  @override
   CustomBouncingScrollPhysics applyTO(ScrollPhysics? ancestors) {
     return CustomBouncingScrollPhysics(parent: buildParent(ancestors));
   }

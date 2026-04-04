@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:nakhra/common/styles/spacing_styles.dart';
 import 'package:nakhra/features/authentication/controllers/login/login_controller.dart';
-import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
 import 'package:nakhra/features/authentication/screens/signup/signup.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 import 'package:nakhra/utils/constants/image_strings.dart';
@@ -14,7 +13,6 @@ import 'package:nakhra/utils/helpers/z_validators.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
-  final _formkey = GlobalKey<FormState>();
   final controller = Get.put(LoginController());
 
   final obsecureText = true;
@@ -66,6 +64,7 @@ class LoginScreen extends StatelessWidget {
                               const SizedBox(height: ZSizes.xs),
                               TextFormField(
                                 controller: controller.email,
+                                keyboardType: TextInputType.emailAddress,
                                 decoration: InputDecoration(
                                   filled: true,
                                   fillColor: ZColors.grey10,
@@ -103,6 +102,7 @@ class LoginScreen extends StatelessWidget {
                               Obx(
                                 () => TextFormField(
                                   controller: controller.password,
+                                  keyboardType: TextInputType.url,
                                   obscureText: controller.hidePassword.value,
                                   decoration: InputDecoration(
                                     filled: true,
@@ -266,7 +266,9 @@ class LoginScreen extends StatelessWidget {
                       height: 56,
                       child: OutlinedButton.icon(
                         style: OutlinedButton.styleFrom(),
-                        onPressed: () {},
+                        onPressed: () {
+                          controller.googleSignIn();
+                        },
                         icon: Padding(
                           padding: EdgeInsetsGeometry.only(right: 1),
                           child: SvgPicture.asset('assets/logo/google_logo.svg', width: 24, height: 24),

@@ -12,7 +12,20 @@
           "package_name": "com.orientasystems.nakhra"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "476784795881-nj4mc5a5dhojoe16hdrfvfbftnb29jjn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.orientasystems.nakhra",
+            "certificate_hash": "0f57fafb43a37aef320356374b6b6418b31737ff"
+          }
+        },
+        {
+          "client_id": "476784795881-3a4tfm90kqd0r5grhqr47ipdlkf6tuoa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDEANC0iVrpSr_5OGFhe00X-hxdPkiE4gY"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "476784795881-3a4tfm90kqd0r5grhqr47ipdlkf6tuoa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

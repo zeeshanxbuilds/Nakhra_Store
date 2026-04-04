@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/state_manager.dart';
@@ -10,9 +9,7 @@ import 'package:nakhra/common/widgets/login_signup/clickable_rich_text.dart';
 import 'package:nakhra/common/widgets/login_signup/z_elevated_button.dart';
 import 'package:nakhra/common/widgets/login_signup/z_text_field.dart';
 import 'package:nakhra/features/authentication/controllers/signup/signup_controller.dart';
-import 'package:nakhra/features/authentication/screens/login/login.dart';
 import 'package:nakhra/features/authentication/screens/terms_and_policy/terms_and_datapolicy_screen.dart';
-import 'package:nakhra/home_menu_getx.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 import 'package:nakhra/utils/constants/image_strings.dart';
 import 'package:nakhra/utils/constants/sizes.dart';

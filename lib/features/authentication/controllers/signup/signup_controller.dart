@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nakhra/data/repositories/authentication/authentication_repository.dart';
@@ -27,23 +26,25 @@ class SignupController extends GetxController {
       }
       ZFullScreenLoader.openLoadingDialog('We are processing you information....');
       // NakhraSnakbars.successSnackBar(title: 'Processing', message: 'Creating your account');
-      final UserCredential = await AuthenticationRepository.instance.registerWithEmailAndPassword(
+      final userCredential = await AuthenticationRepository.instance.registerWithEmailAndPassword(
         email.text.trim(),
         password.text.trim(),
       );
+
       final newUser = UserModel(
-        uid: UserCredential.user!.uid,
+        uid: userCredential.user!.uid,
         fullName: fullName.text.trim(),
         email: email.text.trim(),
         phoneNumber: phoneNumber.text.trim(),
         profilePicture: '',
+        createdAt: userCredential.user!.metadata.creationTime ?? DateTime.now(),
       );
       await UserRepository.instance.saveUserRecord(newUser);
 
       ZFullScreenLoader.stopLoading();
 
       NakhraSnakbars.successSnackBar(title: 'Congratulations!', message: 'Your account has been created.');
-
+      await Future.delayed(Duration(seconds: 2));
       Get.offAll(() => ZBottomNavigationBar());
     } catch (e) {
       ZFullScreenLoader.stopLoading();

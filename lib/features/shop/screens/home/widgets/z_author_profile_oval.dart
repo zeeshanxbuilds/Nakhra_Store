@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ZAuthorProfileOval extends StatelessWidget {
-  final image;
+  final String image;
   const ZAuthorProfileOval({super.key, required this.image});
 
   @override

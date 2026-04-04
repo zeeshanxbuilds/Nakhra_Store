@@ -61,6 +61,7 @@ class HomeScreen extends StatelessWidget {
                               bookPrice: "\$14.99",
                             );
                           },
+                          // ignore: unnecessary_underscores
                           separatorBuilder: (_, __) => const SizedBox(width: 16),
                           itemCount: 15,
                         ),
@@ -84,6 +85,7 @@ class HomeScreen extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return const ZVendorCard(image: ZImages.vendorlogo1);
                           },
+                          // ignore: unnecessary_underscores
                           separatorBuilder: (_, __) => const SizedBox(width: 12),
                           itemCount: 8,
                         ),
@@ -102,6 +104,7 @@ class HomeScreen extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return const ZAuthorProfileOval(image: ZImages.authorImage1);
                           },
+                          // ignore: unnecessary_underscores
                           separatorBuilder: (_, __) => const SizedBox(width: 15),
                           itemCount: 8,
                         ),

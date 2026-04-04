@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 
 class ZVendorCard extends StatelessWidget {
-  final image;
+  final String image;
   const ZVendorCard({super.key, required this.image});
 
   @override

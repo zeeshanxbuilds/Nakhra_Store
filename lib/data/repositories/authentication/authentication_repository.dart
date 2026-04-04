@@ -1,8 +1,11 @@
+import 'package:flutter/services.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:nakhra/utils/exceptions/firebase_auth_exceptions.dart';
+import 'package:nakhra/utils/exceptions/zplatform_exception.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -33,9 +36,34 @@ class AuthenticationRepository extends GetxController {
   /// This is the fucniton to logout the user
   Future<void> logout() async {
     try {
+      await GoogleSignIn().signOut();
       await _auth.signOut();
     } catch (e) {
       throw e.toString();
+    }
+  }
+
+  Future<UserCredential?> signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+      if (googleUser == null) {
+        return null;
+      }
+
+      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      return await FirebaseAuth.instance.signInWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw ZFirebaseAuthException(e.code).message;
+    } on PlatformException catch (e) {
+      throw ZPlatformException(e.code).message;
+    } catch (e) {
+      throw "Something went wrong. Please try again.";
     }
   }
 }

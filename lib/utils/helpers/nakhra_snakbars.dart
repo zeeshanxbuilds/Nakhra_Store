@@ -19,6 +19,7 @@ class NakhraSnakbars {
     );
   }
 
+  // ignore: strict_top_level_inference
   static errorSnackBar({required String title, String message = '', int duration = 3}) {
     Get.snackbar(
       title,

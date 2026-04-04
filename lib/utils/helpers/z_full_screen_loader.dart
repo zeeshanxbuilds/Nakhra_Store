@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 
 class ZFullScreenLoader {
@@ -11,13 +10,19 @@ class ZFullScreenLoader {
       builder: (dialogContext) => PopScope(
         canPop: false,
         child: Container(
-          color: Colors.white,
+          color: Colors.transparent,
           height: double.infinity,
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CircularProgressIndicator(color: ZColors.primary500),
+              Container(
+                height: 80,
+                width: 80,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: ZColors.white),
+                padding: EdgeInsets.all(15),
+                child: CircularProgressIndicator(color: ZColors.primary500),
+              ),
               const SizedBox(height: 20),
               Text(
                 text,

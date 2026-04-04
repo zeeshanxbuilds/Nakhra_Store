@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 import 'package:nakhra/data/repositories/authentication/authentication_repository.dart';
 import 'package:nakhra/data/repositories/user/user_repository.dart';
 import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
-// import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
-import 'package:nakhra/home_menu_getx.dart';
 import 'package:nakhra/utils/theme/theme.dart';
 
 import 'package:firebase_core/firebase_core.dart';

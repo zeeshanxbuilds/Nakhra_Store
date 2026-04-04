@@ -12,6 +12,7 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final categoryController = Get.put(CategoryController());
     return Scaffold(
       body: SafeArea(

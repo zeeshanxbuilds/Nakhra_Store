@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nakhra/utils/constants/colors.dart';
+import 'package:nakhra/utils/constants/image_strings.dart';
 import 'package:nakhra/utils/constants/text_strings.dart';
 
 class ZUserProfileHeader extends StatelessWidget {
@@ -17,16 +18,24 @@ class ZUserProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isNetworkImage = userProfileImage.isNotEmpty;
+    final imageProvider = isNetworkImage
+        ? NetworkImage(userProfileImage) as ImageProvider
+        : AssetImage(ZImages.profileImage);
+
     return ListTile(
-      leading: CircleAvatar(
-        radius: 30,
-        backgroundImage: AssetImage(userProfileImage),
-        backgroundColor: ZColors.primary400,
+      leading: CircleAvatar(radius: 30, backgroundImage: imageProvider, backgroundColor: ZColors.primary400),
+      title: Text(
+        userProfileName,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        style: Theme.of(context).textTheme.titleLarge!.copyWith(color: ZColors.black, fontSize: 17),
       ),
-      title: Text(userProfileName, style: Theme.of(context).textTheme.titleLarge!.copyWith(color: ZColors.black)),
       subtitle: Text(
         userProfileemail,
-        style: Theme.of(context).textTheme.labelSmall!.copyWith(color: ZColors.darkGrey),
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        style: Theme.of(context).textTheme.labelSmall!.copyWith(color: ZColors.gray500),
       ),
       // trailing: Text("Logout"),
       trailing: TextButton(

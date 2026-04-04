@@ -6,7 +6,7 @@ class ZFirebaseAuthException implements Exception {
   String get message {
     switch (code) {
       case 'email-already-in-use':
-        return 'Email already registerd. Please Log-in instead.';
+        return 'Email already registered. Please Log-in instead.';
       case 'invalid-email':
         return 'The email address provided is invalid. Please enter a valid email.';
       case 'weak-password':
@@ -23,6 +23,13 @@ class ZFirebaseAuthException implements Exception {
         return 'Too many failed login attempts. Your account has been temporarily locked. Please try again later.';
       case 'network-request-failed':
         return 'No internet connection. Please check your network and try again.';
+
+      case 'account-exists-with-different-credential':
+        return 'An account already exists with the same email address but different sign-in credentials.';
+      case 'credential-already-in-use':
+        return 'This Google account is already linked to another user.';
+      case 'operation-not-allowed':
+        return 'This sign-in method is currently disabled. Please contact support.';
       default:
         return 'an unexpected authentication error occurred. Please try again.';
     }
