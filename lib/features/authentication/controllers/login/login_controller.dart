@@ -90,9 +90,13 @@ class LoginController extends GetxController {
       ZFullScreenLoader.stopLoading();
 
       if (userCredential.additionalUserInfo?.isNewUser == true) {
-        NakhraSnakbars.successSnackBar(title: 'WELCOME!', message: 'Enjoy The Reading');
+        NakhraSnakbars.successSnackBar(title: 'WELCOME!', message: "We're glad you're here.");
       } else {
-        NakhraSnakbars.successSnackBar(title: 'Welcome Back!', message: 'Keep Reading 😊');
+        NakhraSnakbars.successSnackBar(
+          title: 'Good to see you again!',
+          message: 'Ready to dive back into your current chapter?',
+          duration: 3,
+        );
       }
 
       await Future.delayed(Duration(milliseconds: 1500));

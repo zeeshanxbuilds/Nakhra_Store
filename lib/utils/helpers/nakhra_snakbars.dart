@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 
 class NakhraSnakbars {
-  static void successSnackBar({required String title, String message = ''}) {
+  static void successSnackBar({required String title, String message = '', int duration = 3}) {
     Get.snackbar(
       title,
       message,
@@ -13,7 +13,7 @@ class NakhraSnakbars {
       colorText: ZColors.white,
       backgroundColor: Colors.green,
       snackPosition: SnackPosition.BOTTOM,
-      duration: const Duration(seconds: 3),
+      duration: Duration(seconds: duration),
       margin: const EdgeInsets.all(10),
       icon: const Icon(Icons.check_circle, color: ZColors.white),
     );
