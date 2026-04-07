@@ -118,6 +118,8 @@ class ZTexts {
   static const String noInternet = "No Internet";
   static const String noBooksFound = "No books found in this category.";
   static const String checkInternetConnection = "Please check your internet connection and try again.";
+  static const String changePicture = "Change Picture";
+  static const String saveChanges = "Save Changes";
   static const String unableToSendOTP = "Unable to send OTP";
   static const String otpSendTitle = "OTP Send";
   static const String otpSendMessage = "OTP Send to your phone number successfully.";

@@ -122,3 +122,4 @@ app.*.symbols
 # Security and Environment Variables 
 .env 
 .env*
+*.env

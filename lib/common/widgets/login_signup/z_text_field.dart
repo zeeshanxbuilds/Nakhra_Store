@@ -42,7 +42,7 @@ class ZTextFormField extends StatelessWidget {
             hintText: hintText,
             hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(color: ZColors.borderDark),
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide.none,
+              borderSide: BorderSide(color: ZColors.gray200, width: 1.3),
               borderRadius: BorderRadius.circular(14),
             ),
             focusedBorder: OutlineInputBorder(
