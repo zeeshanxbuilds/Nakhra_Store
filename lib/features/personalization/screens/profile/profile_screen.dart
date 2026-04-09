@@ -63,7 +63,7 @@ class ProfileScreen extends StatelessWidget {
                   colorFilter: ColorFilter.mode(ZColors.gray500, BlendMode.srcIn),
                 ),
                 ontap: () {
-                  Get.to(MyAccountScreen());
+                  Get.to(() => MyAccountScreen());
                 },
               ),
               SizedBox(height: 12),

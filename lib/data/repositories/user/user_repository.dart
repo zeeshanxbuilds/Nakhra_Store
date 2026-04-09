@@ -18,6 +18,18 @@ class UserRepository extends GetxController {
     }
   }
 
+  Future<void> updatespecificFields(String uid, Map<String, dynamic> json) async {
+    try {
+      await _db.collection('Users').doc(uid).update(json);
+    } on FirebaseException catch (e) {
+      throw e.message ?? 'Something went wrong with Firebase(FireStore)';
+    } on PlatformException catch (e) {
+      throw ZPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong while updating user details. Please try again.';
+    }
+  }
+
   Future<UserModel> fetchUserDetails(String uid) async {
     try {
       final documentSnapshot = await _db.collection('Users').doc(uid).get();

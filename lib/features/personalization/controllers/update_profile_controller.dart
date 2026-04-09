@@ -48,10 +48,10 @@ class UpdateProfileController extends GetxController {
   }
 
   Future<String> uploadImageToCloudinary(XFile imageFile) async {
-    const cloudName = 'dabaru8co  ';
-    const uploadPreset = 'image-upload';
+    const cloudName = 'dabaru8co';
+    const uploadPreset = 'nakhra_unsigned';
 
-    final url = Uri.parse('https:api.cloudinary.com/v1_1/$cloudName/image/upload');
+    final url = Uri.parse('https://api.cloudinary.com/v1_1/$cloudName/image/upload');
 
     final request = http.MultipartRequest('Post', url);
 
@@ -98,19 +98,22 @@ class UpdateProfileController extends GetxController {
         'ProfilePicture': finalImageUrl,
       };
 
-      final updateUserData = UserModel.empty();
+      final updateUserData = await UserRepository.instance.updatespecificFields(
+        userController.user.value.uid,
+        data,
+      );
 
       userController.user.update((val) {
         val?.fullName = nameController.text.trim();
         // val?.email = emailController.text.trim();
-        val?.phoneNumber = nameController.text.trim();
-        val?.profilePicture = nameController.text.trim();
+        val?.phoneNumber = phoneNumberController.text.trim();
         val?.profilePicture = finalImageUrl;
       });
 
       ZFullScreenLoader.stopLoading();
-      NakhraSnakbars.successSnackBar(title: 'Success', message: 'Profile updated!');
       Get.back();
+      NakhraSnakbars.successSnackBar(title: 'Success', message: 'Profile updated!');
+
       return;
     } catch (e) {
       ZFullScreenLoader.stopLoading();

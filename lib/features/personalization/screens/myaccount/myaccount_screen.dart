@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -42,14 +44,22 @@ class MyAccountScreen extends StatelessWidget {
                       children: [
                         Obx(() {
                           final networkImage = UserController.instance.user.value.profilePicture;
-                          final image = networkImage.isNotEmpty
-                              ? NetworkImage(networkImage) as ImageProvider
-                              : const AssetImage(ZImages.profileIcon);
-                          return CircleAvatar(radius: 60, backgroundImage: image);
+                          final localImage = controller.selectedImage.value;
+                          ImageProvider imageProvider;
+                          if (localImage != null) {
+                            imageProvider = FileImage(File(localImage.path));
+                          } else if (networkImage.isNotEmpty) {
+                            imageProvider = NetworkImage(networkImage);
+                          } else {
+                            imageProvider = const AssetImage(ZImages.profileIcon);
+                          }
+
+                          return CircleAvatar(radius: 60, backgroundImage: imageProvider);
                         }),
+
                         const SizedBox(height: ZSizes.defaultSpace),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () => controller.pickProfileImage(),
                           style: TextButton.styleFrom(),
                           child: Text(
                             ZTexts.changePicture,
@@ -89,7 +99,10 @@ class MyAccountScreen extends StatelessWidget {
 
                     SizedBox(
                       width: double.infinity,
-                      child: ZElevatedButton(child: const Text(ZTexts.saveChanges), onPressed: () {}),
+                      child: ZElevatedButton(
+                        child: const Text(ZTexts.saveChanges),
+                        onPressed: () => controller.updateProfile(),
+                      ),
                     ),
                   ],
                 ),
