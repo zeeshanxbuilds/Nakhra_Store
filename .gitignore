@@ -123,3 +123,4 @@ app.*.symbols
 .env 
 .env*
 *.env
+functions/.env

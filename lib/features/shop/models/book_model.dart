@@ -4,7 +4,7 @@ class BookModel {
   final String author;
   final double price;
   final String category;
-  final String imageUrl;
+  final String coverImageUrl;
 
   BookModel({
     required this.id,
@@ -12,7 +12,7 @@ class BookModel {
     required this.author,
     required this.price,
     required this.category,
-    required this.imageUrl,
+    required this.coverImageUrl,
   });
 
   Map<String, dynamic> toJson() {
@@ -22,7 +22,7 @@ class BookModel {
       'author': author,
       'price': price,
       'category': category,
-      'imageUrl': imageUrl,
+      'imageUrl': coverImageUrl,
     };
   }
 }

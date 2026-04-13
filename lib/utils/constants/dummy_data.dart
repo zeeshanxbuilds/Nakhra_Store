@@ -9,7 +9,7 @@ class DummyData {
       author: 'Robert T. Kiyosaki',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.richDadPoorDad,
+      coverImageUrl: ZImages.richDadPoorDad,
     ),
     BookModel(
       id: '002',
@@ -17,7 +17,7 @@ class DummyData {
       author: 'Mark Manson',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.subtleArtOfNotGivingAFuck,
+      coverImageUrl: ZImages.subtleArtOfNotGivingAFuck,
     ),
     BookModel(
       id: '003',
@@ -25,7 +25,7 @@ class DummyData {
       author: 'Robert Greene',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.lawsOfPower,
+      coverImageUrl: ZImages.lawsOfPower,
     ),
     BookModel(
       id: '004',
@@ -33,7 +33,7 @@ class DummyData {
       author: 'Darius Foroux',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.doItToday,
+      coverImageUrl: ZImages.doItToday,
     ),
     BookModel(
       id: '005',
@@ -41,7 +41,7 @@ class DummyData {
       author: 'Ankur Warikoo',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.doEpicShit,
+      coverImageUrl: ZImages.doEpicShit,
     ),
     BookModel(
       id: '006',
@@ -49,7 +49,7 @@ class DummyData {
       author: 'Hector Garcia',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.ikigai,
+      coverImageUrl: ZImages.ikigai,
     ),
     BookModel(
       id: '007',
@@ -57,7 +57,7 @@ class DummyData {
       author: 'Thomas Erikson',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.surroundedByIdiots,
+      coverImageUrl: ZImages.surroundedByIdiots,
     ),
     BookModel(
       id: '001',
@@ -65,7 +65,7 @@ class DummyData {
       author: 'Robert T. Kiyosaki',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.richDadPoorDad,
+      coverImageUrl: ZImages.richDadPoorDad,
     ),
     BookModel(
       id: '002',
@@ -73,7 +73,7 @@ class DummyData {
       author: 'Mark Manson',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.subtleArtOfNotGivingAFuck,
+      coverImageUrl: ZImages.subtleArtOfNotGivingAFuck,
     ),
     BookModel(
       id: '003',
@@ -81,7 +81,7 @@ class DummyData {
       author: 'Robert Greene',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.lawsOfPower,
+      coverImageUrl: ZImages.lawsOfPower,
     ),
     BookModel(
       id: '004',
@@ -89,7 +89,7 @@ class DummyData {
       author: 'Darius Foroux',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.doItToday,
+      coverImageUrl: ZImages.doItToday,
     ),
     BookModel(
       id: '005',
@@ -97,7 +97,7 @@ class DummyData {
       author: 'Ankur Warikoo',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.doEpicShit,
+      coverImageUrl: ZImages.doEpicShit,
     ),
     BookModel(
       id: '006',
@@ -105,7 +105,7 @@ class DummyData {
       author: 'Hector Garcia',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.ikigai,
+      coverImageUrl: ZImages.ikigai,
     ),
     BookModel(
       id: '007',
@@ -113,7 +113,7 @@ class DummyData {
       author: 'Thomas Erikson',
       price: 19.99,
       category: 'Self Help',
-      imageUrl: ZImages.surroundedByIdiots,
+      coverImageUrl: ZImages.surroundedByIdiots,
     ),
   ];
 }

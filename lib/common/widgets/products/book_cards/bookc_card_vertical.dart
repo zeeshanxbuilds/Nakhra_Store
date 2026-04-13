@@ -15,7 +15,12 @@ class BookcCardVertical extends StatelessWidget {
         Expanded(
           child: ClipRRect(
             borderRadius: BorderRadiusGeometry.circular(12),
-            child: Image.asset(book.imageUrl, fit: BoxFit.cover, width: double.infinity, height: double.infinity),
+            child: Image.asset(
+              book.coverImageUrl,
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
+            ),
           ),
         ),
         const SizedBox(height: 8),
