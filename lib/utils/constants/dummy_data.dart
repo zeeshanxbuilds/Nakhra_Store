@@ -8,7 +8,7 @@ class DummyData {
       title: 'Rich Dad Poor Dad',
       author: 'Robert T. Kiyosaki',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.richDadPoorDad,
     ),
     BookModel(
@@ -16,7 +16,7 @@ class DummyData {
       title: 'The Subtle Art Of Not Giving A Fuck ',
       author: 'Mark Manson',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.subtleArtOfNotGivingAFuck,
     ),
     BookModel(
@@ -24,7 +24,7 @@ class DummyData {
       title: 'The 48 Laws of Power',
       author: 'Robert Greene',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.lawsOfPower,
     ),
     BookModel(
@@ -32,7 +32,7 @@ class DummyData {
       title: 'Do It Today',
       author: 'Darius Foroux',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.doItToday,
     ),
     BookModel(
@@ -40,7 +40,7 @@ class DummyData {
       title: 'Do Epic Shit',
       author: 'Ankur Warikoo',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.doEpicShit,
     ),
     BookModel(
@@ -48,7 +48,7 @@ class DummyData {
       title: 'Ikigai',
       author: 'Hector Garcia',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.ikigai,
     ),
     BookModel(
@@ -56,7 +56,7 @@ class DummyData {
       title: 'Surrounded by Idiots',
       author: 'Thomas Erikson',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.surroundedByIdiots,
     ),
     BookModel(
@@ -64,7 +64,7 @@ class DummyData {
       title: 'Rich Dad Poor Dad',
       author: 'Robert T. Kiyosaki',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.richDadPoorDad,
     ),
     BookModel(
@@ -72,7 +72,7 @@ class DummyData {
       title: 'The Subtle Art Of Not Giving A Fuck ',
       author: 'Mark Manson',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.subtleArtOfNotGivingAFuck,
     ),
     BookModel(
@@ -80,7 +80,7 @@ class DummyData {
       title: 'The 48 Laws of Power',
       author: 'Robert Greene',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.lawsOfPower,
     ),
     BookModel(
@@ -88,7 +88,7 @@ class DummyData {
       title: 'Do It Today',
       author: 'Darius Foroux',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.doItToday,
     ),
     BookModel(
@@ -96,7 +96,7 @@ class DummyData {
       title: 'Do Epic Shit',
       author: 'Ankur Warikoo',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.doEpicShit,
     ),
     BookModel(
@@ -104,7 +104,7 @@ class DummyData {
       title: 'Ikigai',
       author: 'Hector Garcia',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.ikigai,
     ),
     BookModel(
@@ -112,7 +112,7 @@ class DummyData {
       title: 'Surrounded by Idiots',
       author: 'Thomas Erikson',
       price: 19.99,
-      category: 'Self Help',
+      categoryId: 'Self Help',
       coverImageUrl: ZImages.surroundedByIdiots,
     ),
   ];

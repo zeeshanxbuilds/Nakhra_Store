@@ -7,7 +7,7 @@ import 'package:internet_connection_checker_plus/internet_connection_checker_plu
 import 'package:nakhra/data/repositories/authentication/authentication_repository.dart';
 import 'package:nakhra/data/repositories/user/user_repository.dart';
 import 'package:nakhra/features/personalization/models/user_model.dart';
-import 'package:nakhra/home_menu_getx.dart';
+import 'package:nakhra/home_screen.dart';
 import 'package:nakhra/utils/helpers/nakhra_snakbars.dart';
 import 'package:nakhra/utils/helpers/z_full_screen_loader.dart';
 

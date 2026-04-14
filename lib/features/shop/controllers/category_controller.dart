@@ -25,7 +25,7 @@ class CategoryController extends GetxController {
     if (category == 'All') {
       displayBooks.assignAll(allBooks);
     } else {
-      final filteredList = allBooks.where((book) => book.category == category).toList();
+      final filteredList = allBooks.where((book) => book.categoryId == category).toList();
       displayBooks.assignAll(filteredList);
     }
   }

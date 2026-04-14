@@ -1,15 +1,32 @@
 import 'package:flutter/services.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
+import 'package:nakhra/home_screen.dart';
 import 'package:nakhra/utils/exceptions/firebase_auth_exceptions.dart';
 import 'package:nakhra/utils/exceptions/zplatform_exception.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  @override
+  void onReady() {
+    super.onReady();
+    screenRedirect();
+  }
+
+  void screenRedirect() async {
+    final user = _auth.currentUser;
+    if (user != null) {
+      Get.offAll(() => ZBottomNavigationBar());
+    } else {
+      Get.offAll(() => const OnboardingScreen());
+    }
+  }
 
   /// This is the function to login with Email And Password
   Future<UserCredential> loginWithEmailAndPassword(String email, String password) async {

@@ -8,6 +8,9 @@ class ZImages {
   static const String googleLogo = 'assets/logo/google-logo.png';
   static const String facebookLogo = 'assets/logo/google-logo.png';
 
+  /// splash screen
+
+  static const String splashScreenLogo = "assets/animations/onboardingAnimation/splash_screen_logo.json";
   // OnBoarding Images
 
   static const String onBoardingImage1 = 'assets/animations/onboardingAnimation/chooseproduct.json';

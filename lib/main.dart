@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
+import 'package:nakhra/bindings/general_bindings.dart';
 import 'package:nakhra/data/repositories/authentication/authentication_repository.dart';
 import 'package:nakhra/data/repositories/user/user_repository.dart';
 import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
+import 'package:nakhra/utils/constants/image_strings.dart';
 import 'package:nakhra/utils/theme/theme.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -15,8 +18,6 @@ void main() async {
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  Get.put(AuthenticationRepository());
-  Get.put(UserRepository());
   runApp(const MyApp());
 }
 
@@ -40,10 +41,11 @@ class MyApp extends StatelessWidget {
         defaultTransition: Transition.cupertino,
         transitionDuration: const Duration(milliseconds: 400),
         debugShowCheckedModeBanner: false,
+        initialBinding: GeneralBindings(),
         themeMode: ThemeMode.light,
         theme: ZAppTheme.lightTheme,
         darkTheme: ZAppTheme.darkTheme,
-        home: OnboardingScreen(),
+        home: Scaffold(body: Center(child: Lottie.asset(ZImages.splashScreenLogo))),
       ),
     );
   }
