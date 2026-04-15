@@ -27,4 +27,13 @@ class BookRepository extends GetxController {
       throw "Something went wrong fetching category books.";
     }
   }
+
+  Future<List<BookModel>> getAllBooks() async {
+    try {
+      final snapshot = await _db.collection('Books').get();
+      return snapshot.docs.map((document) => BookModel.fromSnapshot(document)).toList();
+    } catch (e) {
+      throw "Something went wrong fetching all books. Please try again.";
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 import 'package:nakhra/utils/constants/sizes.dart';
@@ -18,15 +19,17 @@ class ZBookCardVertical extends StatelessWidget {
           Container(
             height: 150,
             width: double.infinity,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: ZColors.primary300),
             clipBehavior: Clip.hardEdge,
-            child: Image.asset(imagePath, fit: BoxFit.cover),
+
+            // child: Image.asset(imagePath, fit: BoxFit.cover),
+            child: _buildSmartImage(),
           ),
           const SizedBox(height: ZSizes.sm),
           Text(
             bookTitle,
-            style: Theme.of(context).textTheme.titleMedium,
-            maxLines: 1,
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 12),
+            maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
           const SizedBox(height: ZSizes.xs),
@@ -39,5 +42,36 @@ class ZBookCardVertical extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _buildSmartImage() {
+    if (imagePath.startsWith('http')) {
+      return CachedNetworkImage(
+        imageUrl: imagePath,
+        fit: BoxFit.cover,
+        // Equivalent to loadingBuilder
+        progressIndicatorBuilder: (context, url, downloadProgress) =>
+            Center(child: CircularProgressIndicator(value: downloadProgress.progress)),
+        // Equivalent to errorBuilder
+        errorWidget: (context, url, error) => const Icon(Icons.error_outline),
+      );
+      // return Image.network(
+      //   imagePath,
+      //   fit: BoxFit.cover,
+      //   errorBuilder: (context, error, stackTrace) => const Icon(Icons.error_outline),
+      //   loadingBuilder: (context, child, loadingProgress) {
+      //     if (loadingProgress == null) return child;
+      //     return Center(
+      //       child: CircularProgressIndicator(
+      //         value: loadingProgress.expectedTotalBytes != null
+      //             ? loadingProgress.cumulativeBytesLoaded / (loadingProgress.expectedTotalBytes ?? 1)
+      //             : null,
+      //       ),
+      //     );
+      //   },
+      // );
+    } else {
+      return Image.asset(imagePath, fit: BoxFit.cover);
+    }
   }
 }

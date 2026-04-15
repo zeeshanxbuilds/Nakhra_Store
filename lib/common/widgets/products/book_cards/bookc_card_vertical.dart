@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:nakhra/features/shop/models/book_model.dart';
 import 'package:nakhra/utils/constants/colors.dart';
@@ -15,12 +16,18 @@ class BookcCardVertical extends StatelessWidget {
         Expanded(
           child: ClipRRect(
             borderRadius: BorderRadiusGeometry.circular(12),
-            child: Image.asset(
-              book.coverImageUrl,
+            child: CachedNetworkImage(
+              imageUrl: book.coverImageUrl,
               fit: BoxFit.cover,
               width: double.infinity,
               height: double.infinity,
             ),
+            // child: Image.network(
+            //   book.coverImageUrl,
+            //   fit: BoxFit.cover,
+            //   width: double.infinity,
+            //   height: double.infinity,
+            // ),
           ),
         ),
         const SizedBox(height: 8),

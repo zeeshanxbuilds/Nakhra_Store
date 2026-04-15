@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:nakhra/features/shop/controllers/book_controller.dart';
 import 'package:nakhra/features/shop/screens/home/widgets/book_card_vertical.dart';
 import 'package:nakhra/common/widgets/texts/z_home_screen_section_heading.dart';
 // import 'package:nakhra/common/styles/spacing_styles.dart';
@@ -16,6 +18,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bookController = Get.put(BookController());
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -48,24 +51,56 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 210,
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          physics: const CustomBouncingScrollPhysics(),
-                          padding: EdgeInsets.symmetric(horizontal: 10),
-                          itemBuilder: (context, index) {
-                            return const ZBookCardVertical(
-                              imagePath: ZImages.tOWSectionImage1,
-                              bookTitle: "The Kite Runner",
-                              bookPrice: "\$14.99",
-                            );
-                          },
-                          // ignore: unnecessary_underscores
-                          separatorBuilder: (_, __) => const SizedBox(width: 16),
-                          itemCount: 15,
-                        ),
-                      ),
+
+                      Obx(() {
+                        if (bookController.isLoading.value) {
+                          return SizedBox(height: 210, child: Center(child: CircularProgressIndicator()));
+                        }
+                        if (bookController.featuredBooks.isEmpty) {
+                          return const SizedBox(
+                            height: 210,
+                            child: Center(child: Text("No Featured Books found")),
+                          );
+                        }
+                        return SizedBox(
+                          height: 233,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            itemCount: bookController.featuredBooks.length,
+                            separatorBuilder: (_, __) => const SizedBox(width: 16),
+                            itemBuilder: (context, index) {
+                              final book = bookController.featuredBooks[index];
+                              return ZBookCardVertical(
+                                imagePath: book.coverImageUrl.isNotEmpty
+                                    ? book.coverImageUrl
+                                    : ZImages.tOWSectionImage1,
+                                bookTitle: book.title,
+                                bookPrice: "\$${book.price}",
+                              );
+                            },
+                          ),
+                        );
+                      }),
+
+                      // SizedBox(
+                      //   height: 210,
+                      //   child: ListView.separated(
+                      //     scrollDirection: Axis.horizontal,
+                      //     physics: const CustomBouncingScrollPhysics(),
+                      //     padding: EdgeInsets.symmetric(horizontal: 10),
+                      //     itemBuilder: (context, index) {
+                      //       return const ZBookCardVertical(
+                      //         imagePath: ZImages.tOWSectionImage1,
+                      //         bookTitle: "The Kite Runner",
+                      //         bookPrice: "\$14.99",
+                      //       );
+                      //     },
+                      //     // ignore: unnecessary_underscores
+                      //     separatorBuilder: (_, __) => const SizedBox(width: 16),
+                      //     itemCount: 15,
+                      //   ),
+                      // ),
                       Padding(
                         padding: const EdgeInsets.only(left: 10, right: 10),
                         child: Column(
@@ -85,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return const ZVendorCard(image: ZImages.vendorlogo1);
                           },
-                          // ignore: unnecessary_underscores
+                          // ignore: unnecessary_underscores (this is for linter not for you :) )
                           separatorBuilder: (_, __) => const SizedBox(width: 12),
                           itemCount: 8,
                         ),
@@ -104,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return const ZAuthorProfileOval(image: ZImages.authorImage1);
                           },
-                          // ignore: unnecessary_underscores
+                          // ignore: unnecessary_underscores (this is for linter)
                           separatorBuilder: (_, __) => const SizedBox(width: 15),
                           itemCount: 8,
                         ),

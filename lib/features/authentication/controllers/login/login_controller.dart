@@ -104,7 +104,7 @@ class LoginController extends GetxController {
       password.clear();
       // email.dispose();
       // password.dispose();
-      Get.offAll(ZBottomNavigationBar());
+      Get.offAll(() => ZBottomNavigationBar());
     } catch (e) {
       ZFullScreenLoader.stopLoading();
       NakhraSnakbars.errorSnackBar(title: 'Oh Snap', message: e.toString());

@@ -44,7 +44,7 @@ class ProfileScreen extends StatelessWidget {
                     try {
                       await AuthenticationRepository.instance.logout();
 
-                      Get.offAll(LoginScreen());
+                      Get.offAll(() => LoginScreen());
                     } catch (e) {
                       NakhraSnakbars.errorSnackBar(title: 'Error', message: e.toString());
                     }
