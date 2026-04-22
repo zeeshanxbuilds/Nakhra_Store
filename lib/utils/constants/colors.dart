@@ -31,6 +31,7 @@ class ZColors {
   static const Color primary300 = Color(0xFFA28CE0);
   static const Color primary400 = Color(0xFF7D64C3);
   static const Color primary500 = Color(0xFF54408C);
+  // static const Color primary500 = Color(0xFF44D7A8);
   static const Color primary600 = Color(0xFF352368);
   static const Color primary700 = Color(0xFF251554);
   static const Color primary800 = Color(0xFF10052F);

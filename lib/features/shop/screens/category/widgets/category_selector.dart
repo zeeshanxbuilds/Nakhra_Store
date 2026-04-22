@@ -5,7 +5,7 @@ import 'package:nakhra/utils/constants/colors.dart';
 
 class CategorySelector extends StatelessWidget {
   CategorySelector({super.key});
-  final List<String> categories = ['All', 'Self Help', 'Novels', 'Science', 'Romantic'];
+  final List<String> categories = ['All', 'Self Help', 'Science', 'Biography', 'Novels', 'Romantic'];
 
   @override
   Widget build(BuildContext context) {

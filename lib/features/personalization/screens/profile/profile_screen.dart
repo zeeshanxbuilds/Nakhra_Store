@@ -6,6 +6,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:nakhra/common/widgets/list_tiles/profile_menu_tile.dart';
 import 'package:nakhra/data/repositories/authentication/authentication_repository.dart';
+import 'package:nakhra/dataseed_controller.dart';
 import 'package:nakhra/features/authentication/screens/login/login.dart';
 import 'package:nakhra/features/personalization/controllers/user_controller.dart';
 import 'package:nakhra/features/personalization/screens/myaccount/myaccount_screen.dart';
@@ -21,6 +22,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(UserController());
+    final seederController = Get.put(DataSeederController());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -93,6 +95,29 @@ class ProfileScreen extends StatelessWidget {
                 title: "Help Center",
                 ontap: () {},
               ),
+
+              /// gonna delete it later
+              const SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red, // Making it red so you remember to delete it later!
+                      padding: const EdgeInsets.symmetric(vertical: 15),
+                    ),
+                    onPressed: () async {
+                      await seederController.uploadAllDummyData();
+                    },
+                    child: const Text(
+                      "UPLOAD DUMMY DATA TO FIREBASE",
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 40),
             ],
           ),
         ),

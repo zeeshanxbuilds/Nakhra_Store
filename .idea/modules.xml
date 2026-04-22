@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/nakhra.iml" filepath="$PROJECT_DIR$/nakhra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/nakhra_android.iml" filepath="$PROJECT_DIR$/android/nakhra_android.iml" />
     </modules>
   </component>
 </project>
