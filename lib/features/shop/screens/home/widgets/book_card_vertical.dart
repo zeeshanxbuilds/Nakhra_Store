@@ -48,7 +48,7 @@ class ZBookCardVertical extends StatelessWidget {
     if (imagePath.startsWith('http')) {
       return CachedNetworkImage(
         imageUrl: imagePath,
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
         // Equivalent to loadingBuilder
         progressIndicatorBuilder: (context, url, downloadProgress) =>
             Center(child: CircularProgressIndicator(value: downloadProgress.progress)),

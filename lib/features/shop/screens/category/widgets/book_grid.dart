@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:nakhra/common/widgets/others/book_details_bottom_sheet.dart';
 import 'package:nakhra/common/widgets/products/book_cards/bookc_card_vertical.dart';
 import 'package:nakhra/features/shop/controllers/category_controller.dart';
 import 'package:nakhra/utils/constants/text_strings.dart';
@@ -29,7 +30,14 @@ class BookGridView extends StatelessWidget {
         ),
         itemBuilder: (context, index) {
           final book = controller.displayBooks[index];
-          return BookcCardVertical(book: book);
+          return Material(
+            child: InkWell(
+              onTap: () {
+                ZShowBookDetailsBottomSheet(book);
+              },
+              child: BookcCardVertical(book: book),
+            ),
+          );
         },
       );
     });

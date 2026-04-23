@@ -40,6 +40,8 @@ class ZImages {
   static const String addressIcon = "assets/icons/address.svg";
   static const String offersAndPromosIcon = "assets/icons/offers_promos.svg";
   static const String yourFavoritesIcon = "assets/icons/your_favorites.svg";
+  static const String heartIconGreyColor = "assets/icons/heart_grey.svg";
+
   static const String orderHistoryIcon = "assets/icons/order_history.svg";
   static const String helpCenterIcon = "assets/icons/help_center.svg";
   static const String cheveronTrailingIcon = "assets/icons/cheverontrailingIcon.svg";

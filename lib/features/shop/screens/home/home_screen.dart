@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nakhra/common/widgets/others/book_details_bottom_sheet.dart';
 import 'package:nakhra/features/shop/controllers/book_controller.dart';
 import 'package:nakhra/features/shop/screens/home/widgets/book_card_vertical.dart';
 import 'package:nakhra/common/widgets/texts/z_home_screen_section_heading.dart';
@@ -68,15 +69,25 @@ class HomeScreen extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             padding: const EdgeInsets.symmetric(horizontal: 10),
                             itemCount: bookController.featuredBooks.length,
-                            separatorBuilder: (_, __) => const SizedBox(width: 16),
+                            separatorBuilder: (_, _) => const SizedBox(width: 16),
                             itemBuilder: (context, index) {
                               final book = bookController.featuredBooks[index];
-                              return ZBookCardVertical(
-                                imagePath: book.coverImageUrl.isNotEmpty
-                                    ? book.coverImageUrl
-                                    : ZImages.tOWSectionImage1,
-                                bookTitle: book.title,
-                                bookPrice: "\$${book.price}",
+                              return Material(
+                                color: Colors.transparent,
+
+                                child: InkWell(
+                                  borderRadius: BorderRadius.circular(16),
+                                  onTap: () {
+                                    ZShowBookDetailsBottomSheet(book);
+                                  },
+                                  child: ZBookCardVertical(
+                                    imagePath: book.coverImageUrl.isNotEmpty
+                                        ? book.coverImageUrl
+                                        : ZImages.tOWSectionImage1,
+                                    bookTitle: book.title,
+                                    bookPrice: "\$${book.price}",
+                                  ),
+                                ),
                               );
                             },
                           ),

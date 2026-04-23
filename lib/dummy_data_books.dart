@@ -8,7 +8,7 @@ class DummyDataBooks {
       "pdfUrl":
           "https://publicdomainlibrary.org/uploads/attachments/tj4oyeckqgizr93cx14nz7mj-0026-peter-pan-j-m-barrie.epub",
       "description": "The moment you doubt whether you can fly, you cease for ever to be able to do it.",
-      "category": "Novels",
+      "categoryId": "Novels",
       "stock": 0,
       "isFeatured": false,
 
@@ -32,7 +32,7 @@ class DummyDataBooks {
       "pdfUrl":
           "https://publicdomainlibrary.org/uploads/attachments/q0vdm30zu9q1k19l2p0i2ksp-0030-the-autobiography-of-benjamin-franklin-benjamin-franklin.epub",
       "description": "Tricks and treachery are the practice of fools, that don't have brains enough to be honest",
-      "category": "Biography",
+      "categoryId": "Biography",
       "stock": 0,
       "isFeatured": false,
 
@@ -56,7 +56,7 @@ class DummyDataBooks {
           "https://publicdomainlibrary.org/uploads/attachments/phqq3tyotvl6tkfvec1dme4f-0087-the-origin-of-species-charles-darwin.epub",
       "description":
           "One general law, leading to the advancement of all organic beings, namely, multiply, vary, let the strongest live and the weakest die.",
-      "category": "Science",
+      "categoryId": "Science",
       "stock": 0,
       "isFeatured": true,
 
@@ -80,7 +80,7 @@ class DummyDataBooks {
           "https://publicdomainlibrary.org/uploads/attachments/dtzrew600ghmk407ugpyiato-0097-cup-of-gold-john-steinbeck.epub",
       "description":
           "My great complaint is that the only possession I carry about with me is a bag of losses. I am the owner solely of the memory of things I used to have. Perhaps it is well--for I seem to love them more now that I have them not.",
-      "category": "Novels",
+      "categoryId": "Novels",
       "stock": 0,
       "isFeatured": true,
 
@@ -104,7 +104,7 @@ class DummyDataBooks {
           "https://publicdomainlibrary.org/uploads/attachments/n4oub8id31bextl2jabc0ryy-0033-the-blue-castle-l-m-montgomery.epub",
       "description":
           "If you can sit in silence with a person for half an hour and yet be entirely comfortable, you and that person can be friends. If you cannot, friends you'll never be and you need not waste time in trying.",
-      "category": "Novels",
+      "categoryId": "Novels",
       "stock": 0,
       "isFeatured": false,
 
@@ -128,7 +128,7 @@ class DummyDataBooks {
           "https://publicdomainlibrary.org/uploads/attachments/due2jjxsjhvf7diutziij0u1-0038-a-dolls-house-henrik-ibsen.epub",
       "description":
           "You see, there are some people that one loves, and others that perhaps one would rather be with.",
-      "category": "Novels",
+      "categoryId": "Novels",
       "stock": 0,
       "isFeatured": false,
 
@@ -151,7 +151,7 @@ class DummyDataBooks {
       "pdfUrl":
           "https://publicdomainlibrary.org/uploads/attachments/arlxth5p80edlqsp46h0elhm-0039-a-christmas-carol-charles-dickens.epub",
       "description": "There is nothing in the world so irresistibly contagious as laughter and good humor.",
-      "category": "Novels",
+      "categoryId": "Novels",
       "stock": 0,
       "isFeatured": true,
 
@@ -174,7 +174,7 @@ class DummyDataBooks {
       "pdfUrl":
           "https://publicdomainlibrary.org/uploads/attachments/c5vktsklc8p8ca5orrwl51xw-0007-frankenstein-mary-shelley.epub",
       "description": "Nothing is so painful to the human mind as a great and sudden change.",
-      "category": "Novels",
+      "categoryId": "Novels",
       "stock": 0,
       "isFeatured": true,
 
@@ -198,7 +198,7 @@ class DummyDataBooks {
           "https://publicdomainlibrary.org/uploads/attachments/oe5bkjmpegmldniwbcy27p2w-0027-meditations-marcus-aurelius.epub",
       "description":
           "You have power over your mind - not outside events. Realize this, and you will find strength.",
-      "category": "Science",
+      "categoryId": "Science",
       "stock": 0,
       "isFeatured": true,
 
@@ -222,7 +222,7 @@ class DummyDataBooks {
           "https://publicdomainlibrary.org/uploads/attachments/nb2ma1pbf97jfx5uf2xnzjmh-0098-the-story-of-my-experiments-with-truth-mahatma-gandhi.epub",
       "description":
           "Remember that all through history, there have been tyrants and murderers, and for a time, they seem invincible. But in the end, they always fall. Always.",
-      "category": "Biography",
+      "categoryId": "Biography",
       "stock": 0,
       "isFeatured": true,
 

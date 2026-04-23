@@ -96,28 +96,28 @@ class ProfileScreen extends StatelessWidget {
                 ontap: () {},
               ),
 
-              /// gonna delete it later
-              const SizedBox(height: 40),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red, // Making it red so you remember to delete it later!
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                    ),
-                    onPressed: () async {
-                      await seederController.uploadAllDummyData();
-                    },
-                    child: const Text(
-                      "UPLOAD DUMMY DATA TO FIREBASE",
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 40),
+              // /// gonna delete it later
+              // const SizedBox(height: 40),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 20),
+              //   child: SizedBox(
+              //     width: double.infinity,
+              //     child: ElevatedButton(
+              //       style: ElevatedButton.styleFrom(
+              //         backgroundColor: Colors.red, // Making it red so you remember to delete it later!
+              //         padding: const EdgeInsets.symmetric(vertical: 15),
+              //       ),
+              //       onPressed: () async {
+              //         await seederController.uploadAllDummyData();
+              //       },
+              //       child: const Text(
+              //         "UPLOAD DUMMY DATA TO FIREBASE",
+              //         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // const SizedBox(height: 40),
             ],
           ),
         ),

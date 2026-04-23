@@ -18,7 +18,7 @@ class BookcCardVertical extends StatelessWidget {
             borderRadius: BorderRadiusGeometry.circular(12),
             child: CachedNetworkImage(
               imageUrl: book.coverImageUrl,
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
               width: double.infinity,
               height: double.infinity,
             ),
