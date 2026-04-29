@@ -6,9 +6,9 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:nakhra/common/widgets/list_tiles/profile_menu_tile.dart';
 import 'package:nakhra/data/repositories/authentication/authentication_repository.dart';
-import 'package:nakhra/dataseed_controller.dart';
 import 'package:nakhra/features/authentication/screens/login/login.dart';
 import 'package:nakhra/features/personalization/controllers/user_controller.dart';
+import 'package:nakhra/features/personalization/screens/favorites/favorites_screen.dart';
 import 'package:nakhra/features/personalization/screens/myaccount/myaccount_screen.dart';
 import 'package:nakhra/features/personalization/screens/profile/widgets/user_profile_header.dart';
 import 'package:nakhra/utils/constants/colors.dart';
@@ -22,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(UserController());
-    final seederController = Get.put(DataSeederController());
+    // final seederController = Get.put(DataSeederController());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -81,7 +81,7 @@ class ProfileScreen extends StatelessWidget {
               ZProfileMenuTile(
                 leading: SvgPicture.asset(ZImages.yourFavoritesIcon),
                 title: "Your Favorites",
-                ontap: () {},
+                ontap: () => Get.to(() => const FavoritesScreen()),
               ),
               SizedBox(height: 12),
               ZProfileMenuTile(

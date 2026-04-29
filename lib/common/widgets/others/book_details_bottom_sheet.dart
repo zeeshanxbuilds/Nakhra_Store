@@ -1,19 +1,28 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:nakhra/features/personalization/controllers/favorites_controller.dart';
+import 'package:nakhra/features/shop/controllers/cart_controller.dart';
 import 'package:nakhra/features/shop/models/book_model.dart';
+import 'package:nakhra/home_screen_controller.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 import 'package:nakhra/utils/constants/image_strings.dart';
 import 'package:nakhra/utils/constants/sizes.dart';
+import 'package:nakhra/utils/helpers/nakhra_snakbars.dart';
 
-void ZShowBookDetailsBottomSheet(BookModel book) {
+void zShowBookDetailsBottomSheet(BookModel book) {
   RxInt quantity = 1.obs;
+
+  final cartController = Get.put(CartController());
+  final bottomNavController = Get.find<ZBottomNavigationController>();
+  final favoriteController = Get.put(FavoriteController());
 
   Get.bottomSheet(
     Container(
@@ -57,17 +66,20 @@ void ZShowBookDetailsBottomSheet(BookModel book) {
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                IconButton(
-                  onPressed: () {
-                    // TODO: Implement Favorite Logic later
-                  },
-                  icon: SvgPicture.asset(
-                    ZImages.yourFavoritesIcon,
-                    height: 24,
-                    width: 24,
-                    colorFilter: ColorFilter.mode(ZColors.primary500, BlendMode.srcIn),
-                  ),
-                ),
+                Obx(() {
+                  final isFav = favoriteController.isFavorite(book.id);
+                  return IconButton(
+                    onPressed: () => favoriteController.toggleFavorite(book),
+                    icon: SvgPicture.asset(
+                      // 1. Switch the icon shape
+                      isFav ? ZImages.yourFavoritesIcon : ZImages.heartIconGreyColor,
+                      height: 24,
+                      width: 24,
+                      // 2. Switch the paint color! Purple if favorite, Grey if not.
+                      colorFilter: ColorFilter.mode(isFav ? ZColors.primary500 : Colors.grey, BlendMode.srcIn),
+                    ),
+                  );
+                }),
               ],
             ),
             Text(
@@ -170,7 +182,13 @@ void ZShowBookDetailsBottomSheet(BookModel book) {
                     height: 47,
                     child: ElevatedButton(
                       onPressed: () {
+                        // Get.back();
+                        cartController.addToCart(book, quantity.value);
                         Get.back(); // Closes the bottom sheet
+                        NakhraSnakbars.successSnackBar(title: "Success", message: "${book.title} added to cart!");
+                        // Get.snackbar("Success", "${book.title} added to cart!",
+                        //     snackPosition: SnackPosition.TOP, backgroundColor: Colors.green.withOpacity(0.1));// Closes the bottom sheet
+                        //         },
                       },
 
                       style: ElevatedButton.styleFrom(
@@ -190,6 +208,7 @@ void ZShowBookDetailsBottomSheet(BookModel book) {
                       onPressed: () {
                         // TODO: Add items to Cart Controller here!
                         Get.back(); // Close sheet
+                        bottomNavController.selectedIndex.value = 2;
                         // We will navigate to Cart later
                       },
                       child: const Text("View cart"),

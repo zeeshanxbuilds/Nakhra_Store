@@ -33,7 +33,7 @@ class BookGridView extends StatelessWidget {
           return Material(
             child: InkWell(
               onTap: () {
-                ZShowBookDetailsBottomSheet(book);
+                zShowBookDetailsBottomSheet(book);
               },
               child: BookcCardVertical(book: book),
             ),

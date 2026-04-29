@@ -78,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                                 child: InkWell(
                                   borderRadius: BorderRadius.circular(16),
                                   onTap: () {
-                                    ZShowBookDetailsBottomSheet(book);
+                                    zShowBookDetailsBottomSheet(book);
                                   },
                                   child: ZBookCardVertical(
                                     imagePath: book.coverImageUrl.isNotEmpty

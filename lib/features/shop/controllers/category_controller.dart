@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:nakhra/data/repositories/book/book_repository.dart';
 import 'package:nakhra/features/shop/models/book_model.dart';
-import 'package:nakhra/utils/constants/dummy_data.dart';
 import 'package:nakhra/utils/helpers/nakhra_snakbars.dart';
 
 class CategoryController extends GetxController {

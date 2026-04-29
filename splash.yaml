@@ -1,13 +1,11 @@
 flutter_native_splash:
-  color: "#272727"
-  color_dark: "#FFFFFF"
-  image: assets\logo\t-store-splash-logo-black.png
-  image_dark: assets\logo\t-store-splash-logo-white.png
+  color: "#54408C"
+  color_dark: "#54408C"
+  image: assets\logo\nakhra_logo.png
 
   android_12:
-    color: "#FFFFFF"
-    color_dark: "#272727"
-    image: assets\logo\t-store-splash-logo-black.png
-    image_dark: assets\logo\t-store-splash-logo-white.png
+    color: "#54408C"
+    color_dark: "#54408C"
+    image: assets\logo\nakhra_logo.png
 
     web: false

@@ -1,16 +1,12 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
-import 'package:nakhra/data/repositories/user/user_repository.dart';
 import 'package:nakhra/features/personalization/controllers/user_controller.dart';
-import 'package:nakhra/features/personalization/models/user_model.dart';
 import 'package:nakhra/utils/helpers/nakhra_snakbars.dart';
 import 'package:nakhra/utils/helpers/z_full_screen_loader.dart';
-import 'package:http/http.dart';
 
 class UpdateProfileController extends GetxController {
   static UpdateProfileController get instance => Get.find();
@@ -91,17 +87,17 @@ class UpdateProfileController extends GetxController {
         finalImageUrl = await uploadImageToCloudinary(selectedImage.value!);
       }
 
-      Map<String, dynamic> data = {
-        'FullName': nameController.text.trim(),
-        'Email': emailController.text.trim(),
-        'PhoneNumber': phoneNumberController.text.trim(),
-        'ProfilePicture': finalImageUrl,
-      };
+      // Map<String, dynamic> data = {
+      //   'FullName': nameController.text.trim(),
+      //   'Email': emailController.text.trim(),
+      //   'PhoneNumber': phoneNumberController.text.trim(),
+      //   'ProfilePicture': finalImageUrl,
+      // };
 
-      final updateUserData = await UserRepository.instance.updatespecificFields(
-        userController.user.value.uid,
-        data,
-      );
+      // final updateUserData = await UserRepository.instance.updatespecificFields(
+      //   userController.user.value.uid,
+      //   data,
+      // );
 
       userController.user.update((val) {
         val?.fullName = nameController.text.trim();

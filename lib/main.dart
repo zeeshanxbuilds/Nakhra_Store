@@ -1,11 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:nakhra/bindings/general_bindings.dart';
-import 'package:nakhra/data/repositories/authentication/authentication_repository.dart';
-import 'package:nakhra/data/repositories/user/user_repository.dart';
-import 'package:nakhra/features/authentication/screens/onboarding/onboarding_screen.dart';
 import 'package:nakhra/utils/constants/image_strings.dart';
 import 'package:nakhra/utils/theme/theme.dart';
 
@@ -17,6 +15,12 @@ void main() async {
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // 🚨 TURN ON PATH B: OFFLINE PERSISTENCE 🚨
+  FirebaseFirestore.instance.settings = const Settings(
+    persistenceEnabled: true, // Turns on the hidden SQLite database!
+    cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED, // Gives it enough space to store cart items
+  );
 
   runApp(const MyApp());
 }
