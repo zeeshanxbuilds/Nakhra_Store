@@ -10,6 +10,7 @@ import 'package:nakhra/features/authentication/screens/login/login.dart';
 import 'package:nakhra/features/personalization/controllers/user_controller.dart';
 import 'package:nakhra/features/personalization/screens/favorites/favorites_screen.dart';
 import 'package:nakhra/features/personalization/screens/myaccount/myaccount_screen.dart';
+import 'package:nakhra/features/personalization/screens/orders/order_history_screen.dart';
 import 'package:nakhra/features/personalization/screens/profile/widgets/user_profile_header.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 import 'package:nakhra/utils/constants/image_strings.dart';
@@ -87,7 +88,7 @@ class ProfileScreen extends StatelessWidget {
               ZProfileMenuTile(
                 leading: SvgPicture.asset(ZImages.orderHistoryIcon),
                 title: "Order History",
-                ontap: () {},
+                ontap: () => Get.to(() => const OrderHistoryScreen()),
               ),
               SizedBox(height: 12),
               ZProfileMenuTile(

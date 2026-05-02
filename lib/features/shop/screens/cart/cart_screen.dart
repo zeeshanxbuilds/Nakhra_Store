@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:nakhra/common/widgets/others/z_cart_item_cards.dart';
 import 'package:nakhra/features/shop/controllers/cart_controller.dart';
+import 'package:nakhra/features/shop/screens/checkout/checkout_screen.dart';
 import 'package:nakhra/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:nakhra/utils/constants/colors.dart';
 import 'package:nakhra/utils/constants/image_strings.dart';
@@ -118,7 +119,8 @@ class CartScreen extends StatelessWidget {
                       Get.snackbar("Oops", "Please select an item to checkout.");
                       return;
                     }
-                    Get.snackbar("Success", "Proceeding to checkout!");
+                    Get.to(() => const CheckoutScreen());
+                    // Get.snackbar("Success", "Proceeding to checkout!");
                   },
                   child: const Text("Checkout", style: TextStyle(color: Colors.white, fontSize: 16)),
                 ),

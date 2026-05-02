@@ -17,6 +17,9 @@ class ZImages {
   static const String onBoardingImage2 = 'assets/animations/onboardingAnimation/selectpaymentmethod.json';
   static const String onBoardingImage3 = 'assets/animations/onboardingAnimation/deliveryguy.json';
 
+  /// others
+  static const String locationAnimation = "assets/animations/others/location_icon_animation.json";
+
   // Iconography
   static const String backArrow = "assets/icons/ic_backarrow.svg";
   static const String cartIcon = "assets/icons/ic_cart.svg";

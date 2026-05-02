@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
+import 'package:nakhra/data/repositories/user/user_repository.dart';
 import 'package:nakhra/features/personalization/controllers/user_controller.dart';
 import 'package:nakhra/utils/helpers/nakhra_snakbars.dart';
 import 'package:nakhra/utils/helpers/z_full_screen_loader.dart';
@@ -69,48 +70,96 @@ class UpdateProfileController extends GetxController {
     }
   }
 
+  // Future<void> updateProfile() async {
+  //   try {
+  //     if (nameController.text.trim() == userController.user.value.fullName &&
+  //         emailController.text.trim() == userController.user.value.email &&
+  //         phoneNumberController.text.trim() == userController.user.value.phoneNumber &&
+  //         selectedImage.value == null) {
+  //       Get.back();
+  //       return;
+  //     }
+
+  //     ZFullScreenLoader.openLoadingDialog('Updating..');
+
+  //     String finalImageUrl = userController.user.value.profilePicture;
+
+  //     if (selectedImage.value != null) {
+  //       finalImageUrl = await uploadImageToCloudinary(selectedImage.value!);
+  //     }
+
+  //     Map<String, dynamic> data = {
+  //       'FullName': nameController.text.trim(),
+  //       'Email': emailController.text.trim(),
+  //       'PhoneNumber': phoneNumberController.text.trim(),
+  //       'ProfilePicture': finalImageUrl,
+  //     };
+
+  //     final updateUserData = await UserRepository.instance.updatespecificFields(
+  //       userController.user.value.uid,
+  //       data,
+  //     );
+
+  //     userController.user.update((val) {
+  //       val?.fullName = nameController.text.trim();
+  //       // val?.email = emailController.text.trim();
+  //       val?.phoneNumber = phoneNumberController.text.trim();
+  //       val?.profilePicture = finalImageUrl;
+  //     });
+
+  //     ZFullScreenLoader.stopLoading();
+  //     Get.back();
+  //     NakhraSnakbars.successSnackBar(title: 'Success', message: 'Profile updated!');
+
+  //     return;
+  //   } catch (e) {
+  //     ZFullScreenLoader.stopLoading();
+  //     NakhraSnakbars.errorSnackBar(title: "Error", message: e.toString());
+  //   }
+  // }
+
+  /// This is the new and updated updateproifle function
   Future<void> updateProfile() async {
     try {
+      // 1. Check if anything actually changed
       if (nameController.text.trim() == userController.user.value.fullName &&
-          emailController.text.trim() == userController.user.value.email &&
           phoneNumberController.text.trim() == userController.user.value.phoneNumber &&
           selectedImage.value == null) {
         Get.back();
         return;
       }
 
-      ZFullScreenLoader.openLoadingDialog('Updating..');
+      ZFullScreenLoader.openLoadingDialog('Updating profile...');
 
       String finalImageUrl = userController.user.value.profilePicture;
 
+      // 2. Upload to Cloudinary if a new image was selected
       if (selectedImage.value != null) {
         finalImageUrl = await uploadImageToCloudinary(selectedImage.value!);
       }
 
-      // Map<String, dynamic> data = {
-      //   'FullName': nameController.text.trim(),
-      //   'Email': emailController.text.trim(),
-      //   'PhoneNumber': phoneNumberController.text.trim(),
-      //   'ProfilePicture': finalImageUrl,
-      // };
+      // 3. 🚨 THE FIX: Prepare the JSON Map for Firebase (Make sure keys match your UserModel!)
+      Map<String, dynamic> data = {
+        'FullName': nameController.text.trim(),
+        'PhoneNumber': phoneNumberController.text.trim(),
+        'ProfilePicture': finalImageUrl,
+      };
 
-      // final updateUserData = await UserRepository.instance.updatespecificFields(
-      //   userController.user.value.uid,
-      //   data,
-      // );
+      // 4. 🚨 THE FIX: Actually send it to the Firebase Database!
+      await UserRepository.instance.updatespecificFields(userController.user.value.uid, data);
 
+      // 5. Update the local UI state so it changes instantly without reloading the app
       userController.user.update((val) {
-        val?.fullName = nameController.text.trim();
-        // val?.email = emailController.text.trim();
-        val?.phoneNumber = phoneNumberController.text.trim();
-        val?.profilePicture = finalImageUrl;
+        if (val != null) {
+          val.fullName = nameController.text.trim();
+          val.phoneNumber = phoneNumberController.text.trim();
+          val.profilePicture = finalImageUrl;
+        }
       });
 
       ZFullScreenLoader.stopLoading();
       Get.back();
-      NakhraSnakbars.successSnackBar(title: 'Success', message: 'Profile updated!');
-
-      return;
+      NakhraSnakbars.successSnackBar(title: 'Success', message: 'Profile updated successfully!');
     } catch (e) {
       ZFullScreenLoader.stopLoading();
       NakhraSnakbars.errorSnackBar(title: "Error", message: e.toString());

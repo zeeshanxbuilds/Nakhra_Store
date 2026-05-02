@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nakhra/common/widgets/others/book_details_bottom_sheet.dart';
+import 'package:nakhra/common/widgets/shimmers/z_vertical_book_shimmer.dart';
 import 'package:nakhra/features/shop/controllers/book_controller.dart';
 import 'package:nakhra/features/shop/screens/home/widgets/book_card_vertical.dart';
 import 'package:nakhra/common/widgets/texts/z_home_screen_section_heading.dart';
@@ -55,7 +56,16 @@ class HomeScreen extends StatelessWidget {
 
                       Obx(() {
                         if (bookController.isLoading.value) {
-                          return SizedBox(height: 210, child: Center(child: CircularProgressIndicator()));
+                          return SizedBox(
+                            height: 233,
+                            child: ListView.separated(
+                              scrollDirection: Axis.horizontal,
+                              padding: const EdgeInsets.symmetric(horizontal: 10),
+                              itemCount: 4, // Show 4 fake grey cards while loading
+                              separatorBuilder: (_, _) => const SizedBox(width: 16),
+                              itemBuilder: (_, _) => const ZVerticalBookShimmer(),
+                            ),
+                          );
                         }
                         if (bookController.featuredBooks.isEmpty) {
                           return const SizedBox(

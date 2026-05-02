@@ -50,8 +50,8 @@ class ZBookCardVertical extends StatelessWidget {
         imageUrl: imagePath,
         fit: BoxFit.fill,
         // Equivalent to loadingBuilder
-        progressIndicatorBuilder: (context, url, downloadProgress) =>
-            Center(child: CircularProgressIndicator(value: downloadProgress.progress)),
+        // progressIndicatorBuilder: (context, url, downloadProgress) =>
+        //     Center(child: CircularProgressIndicator(value: downloadProgress.progress)),
         // Equivalent to errorBuilder
         errorWidget: (context, url, error) => const Icon(Icons.error_outline),
       );
